@@ -12,8 +12,8 @@ import view.*;
 public class SoftwareEducativo {
 
     public static void main(String[] args) {
-        vPresentacion  vista = new vPresentacion();
-        vista.setVisible(true);
+        vMain  principal = new vMain();
+        principal.setVisible(true);
         
     }
     
