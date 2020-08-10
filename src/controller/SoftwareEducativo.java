@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package controller;
+import java.awt.Toolkit;
 import view.*;
 /**
  *
@@ -12,9 +13,13 @@ import view.*;
 public class SoftwareEducativo {
 
     public static void main(String[] args) {
-        vMain  principal = new vMain();
+        vIndex  principal = new vIndex();
+        // Obtiene resolución de pantalla
+        
+        
+        
+        principal.setLocationRelativeTo(null);
         principal.setVisible(true);
         
     }
-    
 }
