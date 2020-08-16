@@ -128,7 +128,7 @@ public class vAbout extends javax.swing.JInternalFrame {
         jLabel23.setFont(new java.awt.Font("MS PGothic", 0, 13)); // NOI18N
         jLabel23.setText("github.com/SebastianEPH/SoftwareEducativo_Java");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo-solo-black.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/logo-solo-black.png"))); // NOI18N
         jButton1.setAlignmentY(0.0F);
         jButton1.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

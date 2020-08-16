@@ -15,11 +15,9 @@ public class controller {
     public static void main(String[] args) {
         vIndex  principal = new vIndex();
         // Obtiene resolución de pantalla
-        
-        
-        
         principal.setLocationRelativeTo(null);
         principal.setVisible(true);
+
         
     }
 }
