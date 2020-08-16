@@ -1,7 +1,6 @@
 
 package view;
 
-import java.awt.Font;
 import java.awt.event.KeyEvent;
 
 
@@ -21,7 +20,7 @@ public class vIndex extends javax.swing.JFrame {
     public vIndex() {
         initComponents();
         panel.setFocusable(true);
-        logo.setLocation(y,x);
+        imgAve.setLocation(y,x);
         /*
         int x = 15; 
         while(true){
@@ -46,17 +45,17 @@ public class vIndex extends javax.swing.JFrame {
     private void initComponents() {
 
         panel = new javax.swing.JDesktopPane();
+        imgAve = new javax.swing.JLabel();
         textMain = new javax.swing.JLabel();
-        logo = new javax.swing.JLabel();
         imgFondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        menuJuegoAnimales = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
-        jMenu6 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu7 = new javax.swing.JMenu();
-        helpMenu = new javax.swing.JMenu();
+        juegoM = new javax.swing.JMenu();
+        organizaM = new javax.swing.JMenu();
+        presentacionM = new javax.swing.JMenu();
+        video1M = new javax.swing.JMenu();
+        video2M = new javax.swing.JMenu();
+        finalizarM = new javax.swing.JMenu();
+        aboutM = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1280, 720));
@@ -83,16 +82,17 @@ public class vIndex extends javax.swing.JFrame {
             }
         });
 
-        textMain.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 11)); // NOI18N
+        imgAve.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/gif/ave.gif"))); // NOI18N
+        imgAve.setToolTipText("");
+        panel.add(imgAve);
+        imgAve.setBounds(0, 0, 330, 220);
+
+        textMain.setBackground(new java.awt.Color(0, 0, 0));
+        textMain.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 95)); // NOI18N
         textMain.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textMain.setText("Ecosistemas");
         panel.add(textMain);
-        textMain.setBounds(0, 20, 1280, 110);
-
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/logo-solo-black.png"))); // NOI18N
-        logo.setText("jLabel1");
-        panel.add(logo);
-        logo.setBounds(740, 310, 190, 200);
+        textMain.setBounds(0, 10, 1280, 110);
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/fondo2.png"))); // NOI18N
         panel.add(imgFondo);
@@ -100,48 +100,53 @@ public class vIndex extends javax.swing.JFrame {
 
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 710));
 
-        menuJuegoAnimales.setText("Juego Animales");
-        menuJuegoAnimales.addMouseListener(new java.awt.event.MouseAdapter() {
+        juegoM.setText("Juego Animales");
+        juegoM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                menuJuegoAnimalesMouseClicked(evt);
+                juegoMMouseClicked(evt);
             }
         });
-        menuBar.add(menuJuegoAnimales);
+        menuBar.add(juegoM);
 
-        jMenu4.setText("Organiza Figuras");
-        menuBar.add(jMenu4);
+        organizaM.setText("Organiza Figuras");
+        menuBar.add(organizaM);
 
-        jMenu5.setText("Presentación");
-        menuBar.add(jMenu5);
+        presentacionM.setText("Presentación");
+        menuBar.add(presentacionM);
 
-        jMenu6.setText("Ver Video 1");
-        menuBar.add(jMenu6);
+        video1M.setText("Ver Video 1");
+        menuBar.add(video1M);
 
-        jMenu2.setText("Ver Video 2");
-        menuBar.add(jMenu2);
+        video2M.setText("Ver Video 2");
+        menuBar.add(video2M);
 
-        jMenu7.setText("Finalizar");
-        menuBar.add(jMenu7);
-
-        helpMenu.setMnemonic('h');
-        helpMenu.setText("About");
-        helpMenu.addMouseListener(new java.awt.event.MouseAdapter() {
+        finalizarM.setText("Finalizar");
+        finalizarM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                helpMenuMouseClicked(evt);
+                finalizarMMouseClicked(evt);
             }
         });
-        menuBar.add(helpMenu);
+        menuBar.add(finalizarM);
+
+        aboutM.setMnemonic('h');
+        aboutM.setText("About");
+        aboutM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                aboutMMouseClicked(evt);
+            }
+        });
+        menuBar.add(aboutM);
 
         setJMenuBar(menuBar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuJuegoAnimalesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuJuegoAnimalesMouseClicked
+    private void juegoMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_juegoMMouseClicked
       
-    }//GEN-LAST:event_menuJuegoAnimalesMouseClicked
+    }//GEN-LAST:event_juegoMMouseClicked
 
-    private void helpMenuMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpMenuMouseClicked
+    private void aboutMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMMouseClicked
         System.out.println("-----[Form]-----");
         if (about == null || about.isClosed()){
             System.out.println("[Form] - The form is created - vAbout ");
@@ -151,17 +156,17 @@ public class vIndex extends javax.swing.JFrame {
         }else{
             System.out.println("[Form] - The form exits");
         }
-    }//GEN-LAST:event_helpMenuMouseClicked
+    }//GEN-LAST:event_aboutMMouseClicked
 
     private void panelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panelKeyPressed
 
         switch(evt.getExtendedKeyCode()){
-            case KeyEvent.VK_UP:    System.out.println("Key Up"); y = y-velocidad; break;
-            case KeyEvent.VK_DOWN:  System.out.println("Key Down"); y = y+velocidad; break;
-            case KeyEvent.VK_LEFT:  System.out.println("Key Left");x = x-velocidad;break;
-            case KeyEvent.VK_RIGHT: System.out.println("Key Right"); x = x+velocidad;break;
+            case KeyEvent.VK_UP:    System.out.println("press Key Up");     y = y-velocidad; break;
+            case KeyEvent.VK_DOWN:  System.out.println("press Key Down");   y = y+velocidad; break;
+            case KeyEvent.VK_LEFT:  System.out.println("press Key Left");   x = x-velocidad; break;
+            case KeyEvent.VK_RIGHT: System.out.println("press Key Right");  x = x+velocidad; break;
         }
-        logo.setLocation(x,y);
+        imgAve.setLocation(x,y);
         
 
     }//GEN-LAST:event_panelKeyPressed
@@ -175,20 +180,32 @@ public class vIndex extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_panelComponentAdded
 
+    private void finalizarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_finalizarMMouseClicked
+        System.out.println("-----[Form]-----");
+        if (about == null || about.isClosed()){
+            System.out.println("[Form] - The form is created - vAbout ");
+            about = new vAbout();
+            this.panel.add(about);
+            about.show(true);
+        }else{
+            System.out.println("[Form] - The form exits");
+        }
+    }//GEN-LAST:event_finalizarMMouseClicked
+
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu helpMenu;
+    private javax.swing.JMenu aboutM;
+    private javax.swing.JMenu finalizarM;
+    private javax.swing.JLabel imgAve;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
-    private javax.swing.JMenu jMenu6;
-    private javax.swing.JMenu jMenu7;
-    private javax.swing.JLabel logo;
+    private javax.swing.JMenu juegoM;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenu menuJuegoAnimales;
+    private javax.swing.JMenu organizaM;
     private javax.swing.JDesktopPane panel;
+    private javax.swing.JMenu presentacionM;
     private javax.swing.JLabel textMain;
+    private javax.swing.JMenu video1M;
+    private javax.swing.JMenu video2M;
     // End of variables declaration//GEN-END:variables
 
 }
