@@ -1,173 +1,136 @@
 
 package view;
+
+import java.awt.Font;
+import java.awt.GraphicsEnvironment;
+import java.io.File;
+import java.io.IOException;
+
 public class vIndex extends javax.swing.JFrame {
 
     private vAbout about = null;
+    private vFinalizar finalizar = null;
+    //private final String pathFont = "arthriti.ttf";
+    //private Font font = null ;
     
     public vIndex() {
         initComponents();
+        /*
+        try {
+            GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
+            ge.registerFont(Font.createFont(Font.TRUETYPE_FONT, new File("arthriti.ttf")));
+
+        //labelEco.setFont(customFont);
+        } catch (IOException e) {
+            System.out.println(" Error: "+e);
+        }
+        */
+        imgFondo.setFocusable(true);
+        
     }
 
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         p_lienzo = new javax.swing.JDesktopPane();
+        imgOso = new javax.swing.JLabel();
+        labelEco = new javax.swing.JLabel();
+        imgFondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        fileMenu = new javax.swing.JMenu();
-        openMenuItem = new javax.swing.JMenuItem();
-        saveMenuItem = new javax.swing.JMenuItem();
-        saveAsMenuItem = new javax.swing.JMenuItem();
-        exitMenuItem = new javax.swing.JMenuItem();
-        editMenu = new javax.swing.JMenu();
-        cutMenuItem = new javax.swing.JMenuItem();
-        copyMenuItem = new javax.swing.JMenuItem();
-        pasteMenuItem = new javax.swing.JMenuItem();
-        deleteMenuItem = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
         helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        fileMenu.setMnemonic('f');
-        fileMenu.setText("File");
+        imgOso.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/animalitos/oso.png"))); // NOI18N
+        p_lienzo.add(imgOso);
+        imgOso.setBounds(580, 290, 140, 120);
 
-        openMenuItem.setMnemonic('o');
-        openMenuItem.setText("Open");
-        fileMenu.add(openMenuItem);
+        labelEco.setBackground(new java.awt.Color(255, 51, 51));
+        labelEco.setFont(new java.awt.Font("Gill Sans Ultra Bold Condensed", 0, 90)); // NOI18N
+        labelEco.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelEco.setText("\"Ecosistemas\"");
+        labelEco.setName(""); // NOI18N
+        p_lienzo.add(labelEco);
+        labelEco.setBounds(0, 30, 1280, 120);
+        labelEco.getAccessibleContext().setAccessibleName("labelEco");
+        labelEco.getAccessibleContext().setAccessibleDescription("");
 
-        saveMenuItem.setMnemonic('s');
-        saveMenuItem.setText("Save");
-        fileMenu.add(saveMenuItem);
-
-        saveAsMenuItem.setMnemonic('a');
-        saveAsMenuItem.setText("Save As ...");
-        saveAsMenuItem.setDisplayedMnemonicIndex(5);
-        fileMenu.add(saveAsMenuItem);
-
-        exitMenuItem.setMnemonic('x');
-        exitMenuItem.setText("Exit");
-        exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitMenuItemActionPerformed(evt);
+        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/fondo.jpg"))); // NOI18N
+        imgFondo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                imgFondoKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                imgFondoKeyTyped(evt);
             }
         });
-        fileMenu.add(exitMenuItem);
+        p_lienzo.add(imgFondo);
+        imgFondo.setBounds(0, 0, 1280, 720);
 
-        menuBar.add(fileMenu);
+        getContentPane().add(p_lienzo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
 
-        editMenu.setMnemonic('e');
-        editMenu.setText("Edit");
+        jMenu1.setText("Juego Animales");
+        menuBar.add(jMenu1);
 
-        cutMenuItem.setMnemonic('t');
-        cutMenuItem.setText("Cut");
-        editMenu.add(cutMenuItem);
+        jMenu4.setText("Organiza Figuras");
+        menuBar.add(jMenu4);
 
-        copyMenuItem.setMnemonic('y');
-        copyMenuItem.setText("Copy");
-        editMenu.add(copyMenuItem);
+        jMenu5.setText("Presentación");
+        menuBar.add(jMenu5);
 
-        pasteMenuItem.setMnemonic('p');
-        pasteMenuItem.setText("Paste");
-        editMenu.add(pasteMenuItem);
+        jMenu6.setText("Ver Video 1");
+        menuBar.add(jMenu6);
 
-        deleteMenuItem.setMnemonic('d');
-        deleteMenuItem.setText("Delete");
-        editMenu.add(deleteMenuItem);
+        jMenu2.setText("Ver Video 2");
+        menuBar.add(jMenu2);
 
-        menuBar.add(editMenu);
-
-        jMenu3.setText("Vistas");
-
-        jMenuItem1.setText("Inicio");
-        jMenu3.add(jMenuItem1);
-
-        menuBar.add(jMenu3);
+        jMenu7.setText("Finalizar");
+        menuBar.add(jMenu7);
 
         helpMenu.setMnemonic('h');
-        helpMenu.setText("Ayuda");
-
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        aboutMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                aboutMenuItemActionPerformed(evt);
-            }
-        });
-        helpMenu.add(aboutMenuItem);
-
+        helpMenu.setText("About");
         menuBar.add(helpMenu);
 
         setJMenuBar(menuBar);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p_lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(p_lienzo, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
-        System.exit(0);
-    }//GEN-LAST:event_exitMenuItemActionPerformed
+    private void imgFondoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imgFondoKeyPressed
+        System.out.println("press");
+    }//GEN-LAST:event_imgFondoKeyPressed
 
-    private void aboutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuItemActionPerformed
-        if(about  == null || about.isClosed()){
-            System.out.println("Se creó el primer Formulario About");
-            about = new vAbout();
-            p_lienzo.add(about);
-            
-        }
-        else {
-            System.out.println("Ya existe el Formulario about");
-        }
-        about.setVisible(true);
-        
-        
-        
-    }//GEN-LAST:event_aboutMenuItemActionPerformed
+    private void imgFondoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imgFondoKeyTyped
+        System.out.println("type");
+        imgOso.setLocation(20, 20);
+    }//GEN-LAST:event_imgFondoKeyTyped
 
-    /**
-     * @param args the command line arguments
-     */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
-    private javax.swing.JMenuItem copyMenuItem;
-    private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JMenuItem deleteMenuItem;
-    private javax.swing.JMenu editMenu;
-    private javax.swing.JMenuItem exitMenuItem;
-    private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JLabel imgFondo;
+    private javax.swing.JLabel imgOso;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JLabel labelEco;
     private javax.swing.JMenuBar menuBar;
-    private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JDesktopPane p_lienzo;
-    private javax.swing.JMenuItem pasteMenuItem;
-    private javax.swing.JMenuItem saveAsMenuItem;
-    private javax.swing.JMenuItem saveMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }
