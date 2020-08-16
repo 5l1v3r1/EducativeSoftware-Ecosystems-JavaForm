@@ -14,12 +14,14 @@ public class vIndex extends javax.swing.JFrame {
     private vPresentacion presentacion = null;
     private vVideo1 video1 = null;
     private vVideo2 video2 = null;
-    private int x;
-    private int y;
+    private int x = 5;
+    private int y = 5;
+    private int velocidad =6;
     
     public vIndex() {
         initComponents();
         panel.setFocusable(true);
+        logo.setLocation(y,x);
         /*
         int x = 15; 
         while(true){
@@ -45,7 +47,7 @@ public class vIndex extends javax.swing.JFrame {
 
         panel = new javax.swing.JDesktopPane();
         textMain = new javax.swing.JLabel();
-        imgAve2 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         imgFondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         menuJuegoAnimales = new javax.swing.JMenu();
@@ -87,9 +89,10 @@ public class vIndex extends javax.swing.JFrame {
         panel.add(textMain);
         textMain.setBounds(0, 20, 1280, 110);
 
-        imgAve2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/gif/ave.gif"))); // NOI18N
-        panel.add(imgAve2);
-        imgAve2.setBounds(0, 0, 520, 510);
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/logo-solo-black.png"))); // NOI18N
+        logo.setText("jLabel1");
+        panel.add(logo);
+        logo.setBounds(740, 310, 190, 200);
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/fondo2.png"))); // NOI18N
         panel.add(imgFondo);
@@ -151,21 +154,14 @@ public class vIndex extends javax.swing.JFrame {
     }//GEN-LAST:event_helpMenuMouseClicked
 
     private void panelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panelKeyPressed
-        int velocidad = 2;
-       // x = ;
-        //y = ;
 
-
-        
-        imgAve2.setLocation(imgAve2.getY(), imgAve2.getX()-2);
-        
-        
-        //switch(evt.getExtendedKeyCode()){
-            //case KeyEvent.VK_UP:    System.out.println("Key Up"); imgAve.setLocation(y-velocidad, x); break;
-            //case KeyEvent.VK_DOWN:  System.out.println("Key Down"); imgAve.setLocation(y+velocidad, x); break;
-            //case KeyEvent.VK_LEFT:  System.out.println("Key Left"); imgAve.setLocation(y, x-velocidad); break;
-        //    case KeyEvent.VK_RIGHT: System.out.println("Key Right"); imgAve.setLocation(-); break;
-        //}
+        switch(evt.getExtendedKeyCode()){
+            case KeyEvent.VK_UP:    System.out.println("Key Up"); y = y-velocidad; break;
+            case KeyEvent.VK_DOWN:  System.out.println("Key Down"); y = y+velocidad; break;
+            case KeyEvent.VK_LEFT:  System.out.println("Key Left");x = x-velocidad;break;
+            case KeyEvent.VK_RIGHT: System.out.println("Key Right"); x = x+velocidad;break;
+        }
+        logo.setLocation(x,y);
         
 
     }//GEN-LAST:event_panelKeyPressed
@@ -182,13 +178,13 @@ public class vIndex extends javax.swing.JFrame {
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JLabel imgAve2;
     private javax.swing.JLabel imgFondo;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
+    private javax.swing.JLabel logo;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenu menuJuegoAnimales;
     private javax.swing.JDesktopPane panel;
