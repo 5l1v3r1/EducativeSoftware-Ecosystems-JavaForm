@@ -1,8 +1,7 @@
 
 package view;
-
+import java.awt.Dimension;
 import java.awt.event.KeyEvent;
-
 
 public class vIndex extends javax.swing.JFrame {
 
@@ -20,6 +19,7 @@ public class vIndex extends javax.swing.JFrame {
     public vIndex() {
         initComponents();
         panel.setFocusable(true);
+        panel.setSize(new Dimension(12,21));
         imgAve.setLocation(y,x);
         /*
         int x = 15; 
@@ -109,15 +109,35 @@ public class vIndex extends javax.swing.JFrame {
         menuBar.add(juegoM);
 
         organizaM.setText("Organiza Figuras");
+        organizaM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                organizaMMouseClicked(evt);
+            }
+        });
         menuBar.add(organizaM);
 
         presentacionM.setText("Presentación");
+        presentacionM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                presentacionMMouseClicked(evt);
+            }
+        });
         menuBar.add(presentacionM);
 
         video1M.setText("Ver Video 1");
+        video1M.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                video1MMouseClicked(evt);
+            }
+        });
         menuBar.add(video1M);
 
         video2M.setText("Ver Video 2");
+        video2M.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                video2MMouseClicked(evt);
+            }
+        });
         menuBar.add(video2M);
 
         finalizarM.setText("Finalizar");
@@ -143,7 +163,17 @@ public class vIndex extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void juegoMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_juegoMMouseClicked
-      
+       // juego_animales
+       System.out.println("-----[Form]-----");
+        if (juego_animales == null || juego_animales.isClosed()){
+            System.out.println("[Form] - The form is created - vJuegoAnimales");
+            juego_animales = new vJuegoAnimales();
+            this.panel.add(juego_animales);
+            juego_animales.show(true);
+        }else{
+            System.out.println("[Form] - The form exits");
+        }
+       
     }//GEN-LAST:event_juegoMMouseClicked
 
     private void aboutMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMMouseClicked
@@ -166,9 +196,7 @@ public class vIndex extends javax.swing.JFrame {
             case KeyEvent.VK_LEFT:  System.out.println("press Key Left");   x = x-velocidad; break;
             case KeyEvent.VK_RIGHT: System.out.println("press Key Right");  x = x+velocidad; break;
         }
-        imgAve.setLocation(x,y);
-        
-
+        imgAve.setLocation(x,y);        
     }//GEN-LAST:event_panelKeyPressed
 
     private void panelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_panelMouseClicked
@@ -182,15 +210,64 @@ public class vIndex extends javax.swing.JFrame {
 
     private void finalizarMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_finalizarMMouseClicked
         System.out.println("-----[Form]-----");
-        if (about == null || about.isClosed()){
-            System.out.println("[Form] - The form is created - vAbout ");
-            about = new vAbout();
-            this.panel.add(about);
-            about.show(true);
+        if (finalizar == null || finalizar.isClosed()){
+            System.out.println("[Form] - The form is created - vFinalizar ");
+           finalizar = new vFinalizar();
+            this.panel.add(finalizar);
+            finalizar.show(true);
         }else{
             System.out.println("[Form] - The form exits");
         }
     }//GEN-LAST:event_finalizarMMouseClicked
+
+    private void organizaMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizaMMouseClicked
+        System.out.println("-----[Form]-----");
+        if (organizar == null || organizar.isClosed()){
+            System.out.println("[Form] - The form is created - vOrganizarFiguras");
+            organizar = new vOrganizaFiguras();
+            this.panel.add(organizar);
+            organizar.show(true);
+        }else{
+            System.out.println("[Form] - The form exits");
+        }      
+    }//GEN-LAST:event_organizaMMouseClicked
+
+    private void presentacionMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_presentacionMMouseClicked
+       System.out.println("-----[Form]-----");
+        if (presentacion == null || presentacion.isClosed()){
+            System.out.println("[Form] - The form is created - vPresentacion");
+            presentacion = new vPresentacion();
+            this.panel.add(presentacion);
+            presentacion.show(true);
+        }else{
+            System.out.println("[Form] - The form exits");
+        }
+       
+    }//GEN-LAST:event_presentacionMMouseClicked
+
+    private void video1MMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video1MMouseClicked
+        System.out.println("-----[Form]-----");
+        if (video1 == null || video1.isClosed()){
+            System.out.println("[Form] - The form is created - vVideo1");
+            video1 = new vVideo1();
+            this.panel.add(video1);
+            video1.show(true);
+        }else{
+            System.out.println("[Form] - The form exits");
+        }
+    }//GEN-LAST:event_video1MMouseClicked
+
+    private void video2MMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video2MMouseClicked
+        System.out.println("-----[Form]-----");
+        if (video2 == null || video2.isClosed()){
+            System.out.println("[Form] - The form is created - vVideo2");
+            video2 = new vVideo2();
+            this.panel.add(video2);
+            video2.show(true);
+        }else{
+            System.out.println("[Form] - The form exits");
+        }
+    }//GEN-LAST:event_video2MMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

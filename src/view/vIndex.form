@@ -16,21 +16,33 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Organiza Figuras"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="organizaMMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="presentacionM">
           <Properties>
             <Property name="text" type="java.lang.String" value="Presentaci&#xf3;n"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="presentacionMMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="video1M">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver Video 1"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="video1MMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="video2M">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ver Video 2"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="video2MMouseClicked"/>
+          </Events>
         </Menu>
         <Menu class="javax.swing.JMenu" name="finalizarM">
           <Properties>
