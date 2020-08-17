@@ -32,6 +32,7 @@ public class vFinalizar extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setIconifiable(true);
+        setMaximizable(true);
         setTitle("Finalizar");
 
         jLabel1.setText("jLabel1");
