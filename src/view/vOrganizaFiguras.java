@@ -34,7 +34,7 @@ public class vOrganizaFiguras extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setResizable(true);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/background/oceano/oceano34.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/background/oceano/oceano3423.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

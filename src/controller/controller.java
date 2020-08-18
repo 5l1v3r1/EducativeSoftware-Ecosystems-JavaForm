@@ -5,7 +5,7 @@
  */
 package controller;
 
-import view.*;
+import view.vIndex;
 /**
  *
  * @author sebas
@@ -13,11 +13,19 @@ import view.*;
 public class controller {
 
     public static void main(String[] args) {
-        vIndex  principal = new vIndex();
+       // vMenu  principal = new vMenu();
         // Obtiene resolución de pantalla
-        principal.setLocationRelativeTo(null);
-        principal.setVisible(true);
-
+        //principal.setLocationRelativeTo(null);
+        //principal.setVisible(true);
+        
+        //vIndex i = new vIndex();
+        //i.setLocationRelativeTo(null);
+        //i.setVisible(true);
+        
+        vIndex i = new vIndex();
+  
+        i.setLocationRelativeTo(null);
+        i.setVisible(true);
         
     }
 }
