@@ -2,6 +2,7 @@
 package view;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
+import javax.swing.ImageIcon;
 
 public class vMenu extends javax.swing.JFrame  {
 
@@ -12,6 +13,7 @@ public class vMenu extends javax.swing.JFrame  {
     private vPresentacion presentacion = null;
     private vVideo1 video1 = null;
     private vVideo2 video2 = null;
+    public final int H = 720, W = 1280;
     private int x = 5;
     private int y = 5;
     private int velocidad =6;
@@ -22,6 +24,8 @@ public class vMenu extends javax.swing.JFrame  {
         panel.setFocusable(true);
         panel.setSize(new Dimension(12,21));
         imgAve.setLocation(y,x);
+        //setIconImage(new ImageIcon("/src/resources/ico/seph.ico").getImage());
+         setIconImage(new ImageIcon(getClass().getResource("/resources/img/fondo.jpg")).getImage());
         /*
         int x = 15; 
         while(true){
@@ -59,8 +63,11 @@ public class vMenu extends javax.swing.JFrame  {
         aboutM = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Software Educativo - EcoSoft");
+        setIconImages(null);
         setMaximumSize(new java.awt.Dimension(1280, 720));
         setMinimumSize(new java.awt.Dimension(1280, 720));
+        setName("frmMenu"); // NOI18N
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -171,6 +178,7 @@ public class vMenu extends javax.swing.JFrame  {
             juego_animales = new vJuegoAnimales();
             this.panel.add(juego_animales);
             juego_animales.show(true);
+            juego_animales.setLocation((W/2-(juego_animales.getWidth()/2)), (H/2)-(juego_animales.getHeight()/2));
         }else{
             System.out.println("[Form] - The form exits");
         }

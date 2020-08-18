@@ -1,23 +1,60 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package view;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.media.Manager;
+import javax.media.MediaLocator;
+import javax.media.Player;
+import javax.swing.JPanel;
 
-/**
- *
- * @author sebas
- */
 public class vVideo1 extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Vvideo1
-     */
+    Player player;
+    Component video;
+    Component controles;
+    
     public vVideo1() {
         initComponents();
+        init();
     }
-
+    private void init() {
+            //panel principal
+            JPanel panel = new JPanel();
+            panel.setLayout(new BorderLayout());
+            
+            URL url=null;
+            try {
+                url = new URL("file:///D:/Photos and Videos of my Life/Stauros Campeon.mp4");
+                //url = new URL("file:///C:/Users/Jonathan/Desktop/Avicii_Wake_Me_Up.MPG");
+            } catch (MalformedURLException ex) {
+                System.out.println("Error video pe");
+                Logger.getLogger(vVideo1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try {
+                player = Manager.createRealizedPlayer(new MediaLocator(url));
+                video = player.getVisualComponent();
+                video.setSize(800,500);
+                video.setVisible(true);
+                if(video != null)
+                    panel.add("Center",video);
+                
+                controles = player.getControlPanelComponent();
+                controles.setSize(800,100);
+                controles.setVisible(true);
+                if(controles != null)
+                    panel.add("South",controles);
+                
+                add(panel);
+                player.start();
+                panel.updateUI();
+            } catch (Exception ex) {
+                Logger.getLogger(vVideo1.class.getName()).log(Level.SEVERE, null, ex);
+            }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,24 +64,22 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 70)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Ver video");
+        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 1200, 110));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/background/selva/selva8.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -52,5 +87,6 @@ public class vVideo1 extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

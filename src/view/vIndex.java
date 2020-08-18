@@ -17,8 +17,7 @@ public class vIndex extends javax.swing.JFrame {
     /**
      * Creates new form p
      */
-    private final int  delay = 3 ;
-    private vMenu menu = null;
+    
 
 
     public vIndex() {
@@ -41,7 +40,7 @@ public class vIndex extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        imgLoading = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         imgfondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,9 +57,8 @@ public class vIndex extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        imgLoading.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgLoading.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gif/loading.gif"))); // NOI18N
-        getContentPane().add(imgLoading, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 930, 60));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gif/loading.gif"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 360, 60));
 
         imgfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/main.png"))); // NOI18N
         getContentPane().add(imgfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -69,33 +67,15 @@ public class vIndex extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void formComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_formComponentAdded
-
     }//GEN-LAST:event_formComponentAdded
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        System.out.println("Se abrió formulario");
         
-        Thread f = new Thread(){
-            public void start(){
-                try {
-                    menu = new vMenu();
-                    System.out.println("[Thread] - Form Menu");
-                    Thread.sleep(delay*1000);   // Espera 5 Segundos
-                    
-                    menu.setLocationRelativeTo(null);
-                    setVisible(false);
-                    menu.setVisible(true);
-                } catch (Exception e) {
-                    System.out.println("No se ejcuto hilo: "+e);
-                }
-            }        
-        };
-        f.start();
         
         
     }//GEN-LAST:event_formWindowOpened
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgLoading;
     private javax.swing.JLabel imgfondo;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

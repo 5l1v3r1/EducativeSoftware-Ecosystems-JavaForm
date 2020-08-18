@@ -16,6 +16,8 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
      */
     public vJuegoAnimales() {
         initComponents();
+
+        
     }
 
     /**
