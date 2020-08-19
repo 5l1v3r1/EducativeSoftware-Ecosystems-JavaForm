@@ -51,8 +51,8 @@ public class mPlayVideo {
     public void showVideo(){
         try {
             //getMediaplayer().
-            int W = this.jpanel.getWidth();
-            int H = this.jpanel.getHeight();
+             W = this.jpanel.getWidth();
+             H = this.jpanel.getHeight();
             this.file = new File(this.path);
             this.media = new Media(this.file.toURI().toString());
             this.mediaplayer = new MediaPlayer(this.media);
