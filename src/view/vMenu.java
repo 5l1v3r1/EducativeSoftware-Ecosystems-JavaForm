@@ -177,8 +177,9 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vJuegoAnimales");
             juego_animales = new vJuegoAnimales();
             this.panel.add(juego_animales);
-            juego_animales.show(true);
             juego_animales.setLocation((W/2-(juego_animales.getWidth()/2)), (H/2)-(juego_animales.getHeight()/2));
+            juego_animales.show(true);
+            
         }else{
             System.out.println("[Form] - The form exits");
         }
