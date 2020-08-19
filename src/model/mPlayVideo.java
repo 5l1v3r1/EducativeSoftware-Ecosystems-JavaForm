@@ -104,6 +104,9 @@ public class mPlayVideo {
             System.out.println("There was a mistake while raising volume ");
         }
     }
+    public double getVolume(){
+        return getMediaplayer().getVolume();
+    }
 
     
 }
