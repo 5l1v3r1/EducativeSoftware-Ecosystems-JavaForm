@@ -23,6 +23,9 @@
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
   </SyntheticProperties>
+  <Events>
+    <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="formMouseEntered"/>
+  </Events>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -59,6 +62,7 @@
         </Property>
       </Properties>
       <Events>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pVideoMouseClicked"/>
         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pVideoMouseEntered"/>
         <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pVideoMouseExited"/>
       </Events>
@@ -75,25 +79,15 @@
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <EmptySpace pref="367" max="32767" attributes="0"/>
-                                  <Component id="imgFondo" min="-2" pref="379" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="lTitle" min="-2" pref="398" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnMax" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="btnMin" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="btnMute" min="-2" pref="55" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <EmptySpace pref="367" max="32767" attributes="0"/>
+                          <Component id="imgFondo" min="-2" pref="379" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="338" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lTitle" min="-2" pref="398" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <Component id="btnVideo" min="-2" pref="55" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnPlay" min="-2" pref="55" max="-2" attributes="0"/>
@@ -104,6 +98,13 @@
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="btnMax" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnMin" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnMute" min="-2" pref="55" max="-2" attributes="0"/>
+                      <Component id="btnControls" min="-2" pref="55" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,6 +134,7 @@
                       <Component id="btnPlay" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="btnVideo" min="-2" pref="55" max="-2" attributes="0"/>
                       <Component id="vVolume" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="btnControls" min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="63" max="32767" attributes="0"/>
               </Group>
@@ -152,13 +154,6 @@
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPlayMousePressed"/>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnPlayMouseReleased"/>
           </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="imgFondo">
-          <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/resources/img/gif/condor.gif"/>
-            </Property>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="btnPause">
           <Properties>
@@ -215,7 +210,7 @@
         <Component class="javax.swing.JLabel" name="lTitle">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Dialog" size="18" style="0"/>
+              <Font name="Dialog" size="24" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -247,6 +242,29 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVideoMouseExited"/>
             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVideoMousePressed"/>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnVideoMouseReleased"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="imgFondo">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/resources/img/gif/condor.gif"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="imgFondoMouseEntered"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="btnControls">
+          <Properties>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="horizontalTextPosition" type="int" value="0"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnControlsMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnControlsMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnControlsMouseExited"/>
+            <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnControlsMousePressed"/>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btnControlsMouseReleased"/>
           </Events>
         </Component>
       </SubComponents>

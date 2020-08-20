@@ -1,4 +1,5 @@
 package view;
+import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -13,16 +14,23 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     private mPlayVideo repro;
     //Creamos la variable de tipo String para almacenar la ruta del video
     private boolean video = false;
+    private boolean controls = true;
     private final int square = 50;
     private final String tttlitle = "Video de ecosistemas";
     private final String path= "src\\resources\\vid\\VID-20191109-WA0025.mp4";
-    mIconX iPlay = new mIconX("src\\resources\\img\\icon\\11.png",square,square);
-    mIconX iVideo = new mIconX("src\\resources\\img\\icon\\5.png",square,square);
-    mIconX iPause = new mIconX("src\\resources\\img\\icon\\7.png",square,square);
-    mIconX iMute = new mIconX("src\\resources\\img\\icon\\4.png",square,square);
-    mIconX iMin = new mIconX("src\\resources\\img\\icon\\34.png",square,square); 
-    mIconX iMax = new mIconX("src\\resources\\img\\icon\\35.png",square,square); 
-     
+    private mIconX iPlay = new mIconX("src\\resources\\img\\icon\\11.png",square,square);
+    private mIconX iOcult = new mIconX("src\\resources\\img\\icon\\18.png",square,square);
+    private mIconX iVideo = new mIconX("src\\resources\\img\\icon\\5.png",square,square);
+    private mIconX iPause = new mIconX("src\\resources\\img\\icon\\7.png",square,square);
+    private mIconX iMute = new mIconX("src\\resources\\img\\icon\\4.png",square,square);
+    private mIconX iMin = new mIconX("src\\resources\\img\\icon\\34.png",square,square); 
+    private mIconX iMax = new mIconX("src\\resources\\img\\icon\\35.png",square,square); 
+    
+    
+
+    private int  dX;
+    private int  dY;
+
 
     public vVideo1() {
         initComponents();
@@ -36,32 +44,40 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         btnMute.setIcon(iMute.Standard());
         btnMax.setIcon(iMax.Standard());
         btnMin.setIcon(iMin.Standard());
+        btnControls.setIcon(iOcult.Standard());
         
     }
     
     public void showC(){
-        //btnPlay.setEnabled(true);
-        //btnPlay.setOpaque(true);
-        btnPlay.setSize(50, 50);
-        btnVideo.setIcon(iVideo.Standard());
-        btnPlay.setIcon(iPlay.Standard());
-        btnPause.setIcon(iPause.Standard());
-        btnMute.setIcon(iMute.Standard());
-        btnMax.setIcon(iMax.Standard());
-        btnMin.setIcon(iMin.Standard());
-        
+        if (video || controls){
+             btnVideo.setLocation(31,552);
+            btnPlay.setLocation(104,552);
+            btnPause.setLocation(175,552);
+            btnMute.setLocation(1115,26);
+            btnMax.setLocation(1115,172);
+            btnMin.setLocation(1115,99);
+            vVolume.setLocation(457,581);
+//             btnVideo.setLocation(31,552);
+
+    
+        }
+            
+           
+
     }
     public void hideC(){
-        //btnPlay.setOpaque(false);
-        //btnPlay.setEnabled(false);
-        btnPlay.setSize(0, 0);
-        btnVideo.setSize(0, 0);
-        btnPlay.setSize(0, 0);
-        btnPause.setSize(0, 0);
-        btnMute.setSize(0, 0);
-        btnMax.setSize(0, 0);
-        btnMin.setSize(0, 0);
+        if (video || !controls){
+            btnVideo.setLocation(1300,800);
+            btnPlay.setLocation(1300,800);
+            btnPause.setLocation(1300,800);
+            btnMute.setLocation(1300,800);
+            btnMax.setLocation(1300,800);
+            btnMin.setLocation(1300,800);
+            vVolume.setLocation(1300,800);
+
+        }
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -69,7 +85,6 @@ public class vVideo1 extends javax.swing.JInternalFrame {
 
         pVideo = new javax.swing.JPanel();
         btnPlay = new javax.swing.JLabel();
-        imgFondo = new javax.swing.JLabel();
         btnPause = new javax.swing.JLabel();
         btnMute = new javax.swing.JLabel();
         btnMax = new javax.swing.JLabel();
@@ -77,6 +92,8 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         lTitle = new javax.swing.JLabel();
         vVolume = new javax.swing.JSlider();
         btnVideo = new javax.swing.JLabel();
+        imgFondo = new javax.swing.JLabel();
+        btnControls = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 102, 102));
         setClosable(true);
@@ -87,6 +104,11 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         setMinimumSize(new java.awt.Dimension(1192, 670));
         setName("Video"); // NOI18N
         setPreferredSize(new java.awt.Dimension(1192, 670));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                formMouseEntered(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         pVideo.setBackground(new java.awt.Color(0, 0, 0));
@@ -95,6 +117,9 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         pVideo.setMinimumSize(new java.awt.Dimension(1192, 670));
         pVideo.setPreferredSize(new java.awt.Dimension(1192, 670));
         pVideo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pVideoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pVideoMouseEntered(evt);
             }
@@ -122,8 +147,6 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                 btnPlayMouseReleased(evt);
             }
         });
-
-        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/gif/condor.gif"))); // NOI18N
 
         btnPause.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnPause.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -205,7 +228,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
             }
         });
 
-        lTitle.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        lTitle.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         lTitle.setForeground(new java.awt.Color(255, 255, 255));
         lTitle.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lTitle.setText("Video");
@@ -239,6 +262,33 @@ public class vVideo1 extends javax.swing.JInternalFrame {
             }
         });
 
+        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/gif/condor.gif"))); // NOI18N
+        imgFondo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgFondoMouseEntered(evt);
+            }
+        });
+
+        btnControls.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnControls.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnControls.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnControlsMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnControlsMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnControlsMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnControlsMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                btnControlsMouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout pVideoLayout = new javax.swing.GroupLayout(pVideo);
         pVideo.setLayout(pVideoLayout);
         pVideoLayout.setHorizontalGroup(
@@ -247,19 +297,12 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                 .addGap(31, 31, 31)
                 .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pVideoLayout.createSequentialGroup()
-                        .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pVideoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
-                                .addComponent(imgFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(338, 338, 338))
-                            .addGroup(pVideoLayout.createSequentialGroup()
-                                .addComponent(lTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnMax, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMin, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnMute, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(22, 22, 22))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
+                        .addComponent(imgFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(338, 338, 338))
+                    .addGroup(pVideoLayout.createSequentialGroup()
+                        .addComponent(lTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(pVideoLayout.createSequentialGroup()
                         .addComponent(btnVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -268,7 +311,13 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                         .addComponent(btnPause, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(227, 227, 227)
                         .addComponent(vVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnMax, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMin, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnMute, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnControls, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         pVideoLayout.setVerticalGroup(
             pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -291,7 +340,8 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                     .addComponent(btnPause, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(vVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(vVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnControls, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 63, Short.MAX_VALUE))
         );
 
@@ -302,12 +352,14 @@ public class vVideo1 extends javax.swing.JInternalFrame {
 
     private void pVideoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVideoMouseEntered
         // Aparecer todo 
-        showC();
+        System.out.println("evento entrar");
+        //showC();
     }//GEN-LAST:event_pVideoMouseEntered
 
     private void pVideoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVideoMouseExited
         // Desaparecer todo 
-        hideC();
+        System.out.println("evento salir ");
+       // hideC();
     }//GEN-LAST:event_pVideoMouseExited
 
     private void btnPlayMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayMousePressed
@@ -463,6 +515,12 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     private void btnVideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVideoMouseClicked
         imgFondo.setLocation(pVideo.getWidth(), pVideo.getHeight());
         
+
+        dX = vVolume.getX();
+        dY = vVolume.getY();
+        System.out.println("X : "+dX+"\nY : "+dY);
+        
+        
         if (!video){
             try {
                 if(this.repro.getMediaplayer()!= null){
@@ -474,6 +532,9 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                         repro.setJpanel(pVideo);
                         repro.showVideo();
                         repro.play();
+                        
+                        repro.setVolume(0.0); // solo antibug
+                        
                         lTitle.setText(tttlitle);
                         video = true;
 
@@ -487,27 +548,68 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnVideoMouseClicked
 
     private void btnVideoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVideoMouseEntered
-        // TODO add your handling code here:
+        btnVideo.setIcon(iVideo.Entered());
     }//GEN-LAST:event_btnVideoMouseEntered
 
     private void btnVideoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVideoMouseExited
-        // TODO add your handling code here:
+        btnVideo.setIcon(iVideo.Exited());
     }//GEN-LAST:event_btnVideoMouseExited
 
     private void btnVideoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVideoMousePressed
-        // TODO add your handling code here:
+        btnVideo.setIcon(iVideo.Pressed());
     }//GEN-LAST:event_btnVideoMousePressed
 
     private void btnVideoMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVideoMouseReleased
-        // TODO add your handling code here:
+        btnVideo.setIcon(iVideo.Released());
     }//GEN-LAST:event_btnVideoMouseReleased
 
     private void vVolumeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_vVolumeStateChanged
         repro.setVolume((double)this.vVolume.getValue()/10);
     }//GEN-LAST:event_vVolumeStateChanged
 
+    private void imgFondoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgFondoMouseEntered
+       // showC();
+    }//GEN-LAST:event_imgFondoMouseEntered
+
+    private void formMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseEntered
+     // showC();
+    }//GEN-LAST:event_formMouseEntered
+
+    private void pVideoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pVideoMouseClicked
+       //showC();
+    }//GEN-LAST:event_pVideoMouseClicked
+
+    private void btnControlsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnControlsMouseClicked
+       if (controls){
+           System.out.println("controls =  False");
+           controls = false;
+           hideC();
+       }else{
+           System.out.println("control = True");
+           controls = true;
+           showC();
+       }
+    }//GEN-LAST:event_btnControlsMouseClicked
+
+    private void btnControlsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnControlsMouseEntered
+        btnControls.setIcon(iOcult.Entered());
+    }//GEN-LAST:event_btnControlsMouseEntered
+
+    private void btnControlsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnControlsMouseExited
+        btnControls.setIcon(iOcult.Exited());
+    }//GEN-LAST:event_btnControlsMouseExited
+
+    private void btnControlsMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnControlsMousePressed
+        btnControls.setIcon(iOcult.Pressed());
+    }//GEN-LAST:event_btnControlsMousePressed
+
+    private void btnControlsMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnControlsMouseReleased
+        btnControls.setIcon(iOcult.Released());
+    }//GEN-LAST:event_btnControlsMouseReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel btnControls;
     private javax.swing.JLabel btnMax;
     private javax.swing.JLabel btnMin;
     private javax.swing.JLabel btnMute;
