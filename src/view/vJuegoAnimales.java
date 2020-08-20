@@ -4,19 +4,31 @@
  * and open the template in the editor.
  */
 package view;
+import model.mIconX;
 
 /**
  *
  * @author sebas
  */
 public class vJuegoAnimales extends javax.swing.JInternalFrame {
-
-    /**
-     * Creates new form vJuegoAnimales
-     */
+    
+    private final int sizeX = 356, sizeY = 200;
+    private mIconX iPoloNorte = new mIconX("src\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY);
+    private mIconX iDesierto = new mIconX("src\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY);
+    private mIconX iFondoRio = new mIconX("src\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY);
+    private mIconX iFondoMar= new mIconX("src\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY);
+    private mIconX iCielo = new mIconX("src\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY);
+    private mIconX iSelva= new mIconX("src\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY);
+    
     public vJuegoAnimales() {
         initComponents();
-
+        imgPoloNorte.setIcon(iPoloNorte.Standard());
+        imgDesierto.setIcon(iDesierto.Standard());
+        imgRio.setIcon(iFondoRio.Standard());
+        imgSelva.setIcon(iSelva.Standard());
+        imgFondoMar.setIcon(iFondoMar.Standard());
+        imgCielo.setIcon(iCielo.Standard());
+        
         
     }
 
@@ -29,30 +41,251 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        imgPoloNorte = new javax.swing.JLabel();
+        imgDesierto = new javax.swing.JLabel();
+        imgRio = new javax.swing.JLabel();
+        imgCielo = new javax.swing.JLabel();
+        imgFondoMar = new javax.swing.JLabel();
+        imgSelva = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
+        setTitle("Juego Relacionar");
+        setName("aaaaa"); // NOI18N
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/background/desierto/desierto1.jpg"))); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.setToolTipText("");
+        jPanel1.setMaximumSize(new java.awt.Dimension(1192, 670));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1192, 670));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1192, 670));
+        jPanel1.setRequestFocusEnabled(false);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 20)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Relaciona los animales con sus ecosistemas");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        imgPoloNorte.setBackground(new java.awt.Color(255, 0, 51));
+        imgPoloNorte.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgPoloNorte.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        imgPoloNorte.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgPoloNorte.setMaximumSize(new java.awt.Dimension(356, 200));
+        imgPoloNorte.setMinimumSize(new java.awt.Dimension(356, 200));
+        imgPoloNorte.setPreferredSize(new java.awt.Dimension(356, 200));
+        imgPoloNorte.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgPoloNorteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgPoloNorteMouseExited(evt);
+            }
+        });
+
+        imgDesierto.setBackground(new java.awt.Color(255, 0, 51));
+        imgDesierto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgDesierto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        imgDesierto.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        imgDesierto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgDesierto.setMaximumSize(new java.awt.Dimension(356, 200));
+        imgDesierto.setMinimumSize(new java.awt.Dimension(356, 200));
+        imgDesierto.setPreferredSize(new java.awt.Dimension(356, 200));
+        imgDesierto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgDesiertoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgDesiertoMouseExited(evt);
+            }
+        });
+
+        imgRio.setBackground(new java.awt.Color(255, 0, 51));
+        imgRio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgRio.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        imgRio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgRio.setMaximumSize(new java.awt.Dimension(356, 200));
+        imgRio.setMinimumSize(new java.awt.Dimension(356, 200));
+        imgRio.setPreferredSize(new java.awt.Dimension(356, 200));
+        imgRio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgRioMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgRioMouseExited(evt);
+            }
+        });
+
+        imgCielo.setBackground(new java.awt.Color(255, 0, 51));
+        imgCielo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgCielo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        imgCielo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        imgCielo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgCielo.setMaximumSize(new java.awt.Dimension(356, 200));
+        imgCielo.setMinimumSize(new java.awt.Dimension(356, 200));
+        imgCielo.setPreferredSize(new java.awt.Dimension(356, 200));
+        imgCielo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgCieloMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgCieloMouseExited(evt);
+            }
+        });
+
+        imgFondoMar.setBackground(new java.awt.Color(255, 0, 51));
+        imgFondoMar.setForeground(new java.awt.Color(255, 51, 51));
+        imgFondoMar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgFondoMar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        imgFondoMar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        imgFondoMar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgFondoMar.setMaximumSize(new java.awt.Dimension(356, 200));
+        imgFondoMar.setMinimumSize(new java.awt.Dimension(356, 200));
+        imgFondoMar.setPreferredSize(new java.awt.Dimension(356, 200));
+        imgFondoMar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgFondoMarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgFondoMarMouseExited(evt);
+            }
+        });
+
+        imgSelva.setBackground(new java.awt.Color(255, 0, 51));
+        imgSelva.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgSelva.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 3, true));
+        imgSelva.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        imgSelva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgSelva.setMaximumSize(new java.awt.Dimension(356, 200));
+        imgSelva.setMinimumSize(new java.awt.Dimension(356, 200));
+        imgSelva.setPreferredSize(new java.awt.Dimension(356, 200));
+        imgSelva.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgSelvaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgSelvaMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgCielo, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(imgPoloNorte, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgFondoMar, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgSelva, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(12, 12, 12)
+                            .addComponent(imgDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(12, 12, 12)
+                            .addComponent(imgFondoMar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(imgSelva, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(imgPoloNorte, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(imgCielo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel1))
+                .addContainerGap(22, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 431, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void imgRioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgRioMouseEntered
+        imgRio.setIcon(iFondoRio.Entered());
+    }//GEN-LAST:event_imgRioMouseEntered
+
+    private void imgRioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgRioMouseExited
+        imgRio.setIcon(iFondoRio.Exited());
+    }//GEN-LAST:event_imgRioMouseExited
+
+    private void imgDesiertoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgDesiertoMouseEntered
+        imgDesierto.setIcon(iDesierto.Entered());
+    }//GEN-LAST:event_imgDesiertoMouseEntered
+
+    private void imgDesiertoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgDesiertoMouseExited
+        imgDesierto.setIcon(iDesierto.Standard());
+    }//GEN-LAST:event_imgDesiertoMouseExited
+
+    private void imgPoloNorteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPoloNorteMouseExited
+        imgPoloNorte.setIcon(iPoloNorte.Standard());
+    }//GEN-LAST:event_imgPoloNorteMouseExited
+
+    private void imgPoloNorteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPoloNorteMouseEntered
+        imgPoloNorte.setIcon(iPoloNorte.Entered());
+    }//GEN-LAST:event_imgPoloNorteMouseEntered
+
+    private void imgCieloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCieloMouseEntered
+        imgCielo.setIcon(iCielo.Entered());
+    }//GEN-LAST:event_imgCieloMouseEntered
+
+    private void imgCieloMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCieloMouseExited
+        imgCielo.setIcon(iCielo.Standard());
+    }//GEN-LAST:event_imgCieloMouseExited
+
+    private void imgFondoMarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgFondoMarMouseEntered
+        imgFondoMar.setIcon(iFondoMar.Entered());
+    }//GEN-LAST:event_imgFondoMarMouseEntered
+
+    private void imgFondoMarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgFondoMarMouseExited
+        imgFondoMar.setIcon(iFondoMar.Standard());
+    }//GEN-LAST:event_imgFondoMarMouseExited
+
+    private void imgSelvaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgSelvaMouseEntered
+        imgSelva.setIcon(iSelva.Entered());
+    }//GEN-LAST:event_imgSelvaMouseEntered
+
+    private void imgSelvaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgSelvaMouseExited
+        imgSelva.setIcon(iSelva.Exited());
+    }//GEN-LAST:event_imgSelvaMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imgCielo;
+    private javax.swing.JLabel imgDesierto;
+    private javax.swing.JLabel imgFondoMar;
+    private javax.swing.JLabel imgPoloNorte;
+    private javax.swing.JLabel imgRio;
+    private javax.swing.JLabel imgSelva;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

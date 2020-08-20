@@ -25,7 +25,7 @@ public class vMenu extends javax.swing.JFrame  {
         panel.setSize(new Dimension(12,21));
         imgAve.setLocation(y,x);
         //setIconImage(new ImageIcon("/src/resources/ico/seph.ico").getImage());
-         setIconImage(new ImageIcon(getClass().getResource("/resources/img/fondo.jpg")).getImage());
+         setIconImage(new ImageIcon("src/resources/img/Circulo Blanco.png").getImage());
         /*
         int x = 15; 
         while(true){
@@ -54,8 +54,8 @@ public class vMenu extends javax.swing.JFrame  {
         textMain = new javax.swing.JLabel();
         imgFondo = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
-        juegoM = new javax.swing.JMenu();
         organizaM = new javax.swing.JMenu();
+        juegoM = new javax.swing.JMenu();
         presentacionM = new javax.swing.JMenu();
         video1M = new javax.swing.JMenu();
         video2M = new javax.swing.JMenu();
@@ -97,24 +97,18 @@ public class vMenu extends javax.swing.JFrame  {
 
         textMain.setBackground(new java.awt.Color(0, 0, 0));
         textMain.setFont(new java.awt.Font("Franklin Gothic Medium Cond", 0, 95)); // NOI18N
+        textMain.setForeground(new java.awt.Color(0, 0, 0));
         textMain.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textMain.setText("Ecosistemas");
         panel.add(textMain);
         textMain.setBounds(0, 10, 1280, 110);
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/fondo2.png"))); // NOI18N
+        imgFondo.setIconTextGap(0);
         panel.add(imgFondo);
         imgFondo.setBounds(0, 0, 1280, 710);
 
         getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 710));
-
-        juegoM.setText("Juego Animales");
-        juegoM.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                juegoMMouseClicked(evt);
-            }
-        });
-        menuBar.add(juegoM);
 
         organizaM.setText("Organiza Figuras");
         organizaM.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -123,6 +117,14 @@ public class vMenu extends javax.swing.JFrame  {
             }
         });
         menuBar.add(organizaM);
+
+        juegoM.setText("Juego Ecosistemas");
+        juegoM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                juegoMMouseClicked(evt);
+            }
+        });
+        menuBar.add(juegoM);
 
         presentacionM.setText("Presentación");
         presentacionM.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -179,8 +181,11 @@ public class vMenu extends javax.swing.JFrame  {
             this.panel.add(juego_animales);
             juego_animales.setLocation((W/2-(juego_animales.getWidth()/2)), (H/2)-(juego_animales.getHeight()/2));
             juego_animales.show(true);
+            //juego_animales.setVisible(true);
             
         }else{
+            //juego_animales.setVisible(true);
+            juego_animales.setLocation((W/2-(juego_animales.getWidth()/2)), (H/2)-(juego_animales.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }
        
@@ -192,9 +197,12 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vAbout ");
             about = new vAbout();
             this.panel.add(about);
+            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
             about.show(true);
         }else{
+            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
             System.out.println("[Form] - The form exits");
+            
         }
     }//GEN-LAST:event_aboutMMouseClicked
 
@@ -224,8 +232,10 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vFinalizar ");
            finalizar = new vFinalizar();
             this.panel.add(finalizar);
+            finalizar.setLocation((W/2-(finalizar.getWidth()/2)), (H/2)-(finalizar.getHeight()/2));
             finalizar.show(true);
         }else{
+            finalizar.setLocation((W/2-(finalizar.getWidth()/2)), (H/2)-(finalizar.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }
     }//GEN-LAST:event_finalizarMMouseClicked
@@ -236,8 +246,10 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vOrganizarFiguras");
             organizar = new vOrganizaFiguras();
             this.panel.add(organizar);
+            organizar.setLocation((W/2-(organizar.getWidth()/2)), (H/2)-(organizar.getHeight()/2));
             organizar.show(true);
         }else{
+            organizar.setLocation((W/2-(organizar.getWidth()/2)), (H/2)-(organizar.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }      
     }//GEN-LAST:event_organizaMMouseClicked
@@ -248,8 +260,10 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vPresentacion");
             presentacion = new vPresentacion();
             this.panel.add(presentacion);
+            presentacion.setLocation((W/2-(presentacion.getWidth()/2)), (H/2)-(presentacion.getHeight()/2));
             presentacion.show(true);
         }else{
+            presentacion.setLocation((W/2-(presentacion.getWidth()/2)), (H/2)-(presentacion.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }
        
@@ -261,8 +275,10 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vVideo1");
             video1 = new vVideo1();
             this.panel.add(video1);
+            video1.setLocation((W/2-(video1.getWidth()/2)), (H/2)-(video1.getHeight()/2));
             video1.show(true);
         }else{
+            video1.setLocation((W/2-(video1.getWidth()/2)), (H/2)-(video1.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }
     }//GEN-LAST:event_video1MMouseClicked
@@ -273,8 +289,10 @@ public class vMenu extends javax.swing.JFrame  {
             System.out.println("[Form] - The form is created - vVideo2");
             video2 = new vVideo2();
             this.panel.add(video2);
+            video2.setLocation((W/2-(video2.getWidth()/2)), (H/2)-(video2.getHeight()/2));
             video2.show(true);
         }else{
+            video2.setLocation((W/2-(video2.getWidth()/2)), (H/2)-(video2.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }
     }//GEN-LAST:event_video2MMouseClicked

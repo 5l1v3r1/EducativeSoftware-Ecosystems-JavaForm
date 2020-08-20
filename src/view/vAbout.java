@@ -55,7 +55,6 @@ public class vAbout extends javax.swing.JInternalFrame {
         jLabel25 = new javax.swing.JLabel();
 
         setClosable(true);
-        setIconifiable(true);
         setTitle("About");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 

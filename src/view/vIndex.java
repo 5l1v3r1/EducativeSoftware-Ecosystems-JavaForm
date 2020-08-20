@@ -6,6 +6,7 @@
 package view;
 
 import com.sun.awt.AWTUtilities;
+import javax.swing.ImageIcon;
 
 
 /**
@@ -23,6 +24,7 @@ public class vIndex extends javax.swing.JFrame {
     public vIndex() {
         
         initComponents();
+        setIconImage(new ImageIcon("src/resources/img/Circulo Blanco.png").getImage());
         AWTUtilities.setWindowOpaque(this, false);
         
        
