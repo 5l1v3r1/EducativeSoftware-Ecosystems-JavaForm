@@ -13,12 +13,12 @@ import model.mIconX;
 public class vJuegoAnimales extends javax.swing.JInternalFrame {
     
     private final int sizeX = 356, sizeY = 200;
-    private mIconX iPoloNorte = new mIconX("src\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY);
-    private mIconX iDesierto = new mIconX("src\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY);
-    private mIconX iFondoRio = new mIconX("src\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY);
-    private mIconX iFondoMar= new mIconX("src\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY);
-    private mIconX iCielo = new mIconX("src\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY);
-    private mIconX iSelva= new mIconX("src\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY);
+    private mIconX iPoloNorte = new mIconX("\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY);
+    private mIconX iDesierto = new mIconX("\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY);
+    private mIconX iFondoRio = new mIconX("\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY);
+    private mIconX iFondoMar= new mIconX("\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY);
+    private mIconX iCielo = new mIconX("\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY);
+    private mIconX iSelva= new mIconX("\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY);
     
     public vJuegoAnimales() {
         initComponents();

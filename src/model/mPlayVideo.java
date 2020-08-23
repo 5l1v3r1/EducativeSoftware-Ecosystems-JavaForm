@@ -54,7 +54,10 @@ public class mPlayVideo {
              W = this.jpanel.getWidth();
              H = this.jpanel.getHeight();
             this.file = new File(this.path);
-            this.media = new Media(this.file.toURI().toString());
+            //this.media = new Media(this.file.toURI().toString());
+            
+            this.media = new Media(getClass().getResource(this.path).toString());
+            
             this.mediaplayer = new MediaPlayer(this.media);
             this.mediaView = new MediaView(this.mediaplayer);
             this.mediaView.setFitHeight(H);

@@ -17,7 +17,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     private boolean controls1 = true;
     private final int square = 50;
     private final String tttlitle = "Video de ecosistemas";
-    private final String path= "src\\resources\\vid\\VID-20191109-WA0025.mp4";
+    private final String path= "\\resources\\vid\\VID-20191109-WA0025.mp4";
     private mIconX iPlay = new mIconX("\\resources\\img\\icon\\11.png",square,square);
     private mIconX iOcult = new mIconX("\\resources\\img\\icon\\18.png",square,square);
     private mIconX iVideo = new mIconX("\\resources\\img\\icon\\5.png",square,square);
@@ -528,7 +528,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                 }
                 if (!path.isEmpty()){
 
-                    repro1.setPath(path.replace("\\", "/"));
+                        repro1.setPath(path.replace("\\", "/"));
                         repro1.setJpanel(pVideo);
                         repro1.showVideo();
                         repro1.play();
