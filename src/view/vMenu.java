@@ -11,12 +11,12 @@ public class vMenu extends javax.swing.JFrame  {
     private vJuegoAnimales juego_animales = null;
     private vOrganizaFiguras organizar = null;
     private vPresentacion presentacion = null;
-    private vVideo2 video1 = null;
-    private vVideo1 video2 = null;
+    private vVideo2 video2 = null;
+    private vVideo1 video1 = null;
     public final int H = 720, W = 1280;
     private int x = 5;
     private int y = 5;
-    private int velocidad =6;
+    private final int velocidad =6;
     
     public vMenu() {
         initComponents();
@@ -25,7 +25,7 @@ public class vMenu extends javax.swing.JFrame  {
         panel.setSize(new Dimension(12,21));
         imgAve.setLocation(y,x);
         //setIconImage(new ImageIcon("/src/resources/ico/seph.ico").getImage());
-         setIconImage(new ImageIcon("src/resources/img/Circulo Blanco.png").getImage());
+         setIconImage(new ImageIcon(getClass().getResource("/resources/img/Circulo Blanco.png")).getImage());
         /*
         int x = 15; 
         while(true){
@@ -272,8 +272,8 @@ public class vMenu extends javax.swing.JFrame  {
     private void video1MMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video1MMouseClicked
         System.out.println("-----[Form]-----");
         if (video1 == null || video1.isClosed()){
-            System.out.println("[Form] - The form is created - vVideo1");
-            video1 = new vVideo2();
+            System.out.println("[Form] - The form is created - vVideo2");
+            video1 = new vVideo1();
             this.panel.add(video1);
             video1.setLocation((W/2-(video1.getWidth()/2)), (H/2)-(video1.getHeight()/2));
             video1.show(true);
@@ -286,8 +286,8 @@ public class vMenu extends javax.swing.JFrame  {
     private void video2MMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video2MMouseClicked
         System.out.println("-----[Form]-----");
         if (video2 == null || video2.isClosed()){
-            System.out.println("[Form] - The form is created - vVideo2");
-            video2 = new vVideo1();
+            System.out.println("[Form] - The form is created - vVideo1");
+            video2 = new vVideo2();
             this.panel.add(video2);
             video2.setLocation((W/2-(video2.getWidth()/2)), (H/2)-(video2.getHeight()/2));
             video2.show(true);
@@ -295,6 +295,10 @@ public class vMenu extends javax.swing.JFrame  {
             video2.setLocation((W/2-(video2.getWidth()/2)), (H/2)-(video2.getHeight()/2));
             System.out.println("[Form] - The form exits");
         }
+        
+        
+        
+        
     }//GEN-LAST:event_video2MMouseClicked
 
    

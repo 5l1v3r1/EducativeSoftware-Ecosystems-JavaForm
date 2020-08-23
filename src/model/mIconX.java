@@ -20,10 +20,10 @@ public class mIconX {
     private ImageIcon icon ;
     
     public mIconX(String path,int W,int H){
-       this.path = path;
+       this.path = path.replace("\\", "/");
        this.W = W;
        this.H = H;
-       this.icon = new ImageIcon(this.path.replace("\\", "/"));
+       this.icon = new ImageIcon(getClass().getResource(this.path));
     }
     public Icon Standard(){
         ImageIcon icono = new ImageIcon(icon.getImage().getScaledInstance(W, H, Image.SCALE_DEFAULT));

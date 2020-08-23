@@ -24,7 +24,7 @@ public class vIndex extends javax.swing.JFrame {
     public vIndex() {
         
         initComponents();
-        setIconImage(new ImageIcon("src/resources/img/Circulo Blanco.png").getImage());
+        setIconImage(new ImageIcon(getClass().getResource("/resources/img/Circulo Blanco.png")).getImage());
         AWTUtilities.setWindowOpaque(this, false);
         
        

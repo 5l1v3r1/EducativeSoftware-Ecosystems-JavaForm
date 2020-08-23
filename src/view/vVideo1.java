@@ -11,20 +11,20 @@ import model.mIconX;
 
 public class vVideo1 extends javax.swing.JInternalFrame {
      //Creamos un objeto de la clase Reproductor
-    private mPlayVideo repro;
-    //Creamos la variable de tipo String para almacenar la ruta del video
-    private boolean video = false;
-    private boolean controls = true;
+    private mPlayVideo repro1;
+    //Creamos la variable de tipo String para almacenar la ruta del video1
+    private boolean video1 = false;
+    private boolean controls1 = true;
     private final int square = 50;
     private final String tttlitle = "Video de ecosistemas";
     private final String path= "src\\resources\\vid\\VID-20191109-WA0025.mp4";
-    private mIconX iPlay = new mIconX("src\\resources\\img\\icon\\11.png",square,square);
-    private mIconX iOcult = new mIconX("src\\resources\\img\\icon\\18.png",square,square);
-    private mIconX iVideo = new mIconX("src\\resources\\img\\icon\\5.png",square,square);
-    private mIconX iPause = new mIconX("src\\resources\\img\\icon\\7.png",square,square);
-    private mIconX iMute = new mIconX("src\\resources\\img\\icon\\4.png",square,square);
-    private mIconX iMin = new mIconX("src\\resources\\img\\icon\\34.png",square,square); 
-    private mIconX iMax = new mIconX("src\\resources\\img\\icon\\35.png",square,square); 
+    private mIconX iPlay = new mIconX("\\resources\\img\\icon\\11.png",square,square);
+    private mIconX iOcult = new mIconX("\\resources\\img\\icon\\18.png",square,square);
+    private mIconX iVideo = new mIconX("\\resources\\img\\icon\\5.png",square,square);
+    private mIconX iPause = new mIconX("\\resources\\img\\icon\\7.png",square,square);
+    private mIconX iMute = new mIconX("\\resources\\img\\icon\\4.png",square,square);
+    private mIconX iMin = new mIconX("\\resources\\img\\icon\\34.png",square,square); 
+    private mIconX iMax = new mIconX("\\resources\\img\\icon\\35.png",square,square);  
     
     
 
@@ -35,7 +35,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     public vVideo1() {
         initComponents();
         //Intanciamos el objeto de la clase Reproductor
-        this.repro = new mPlayVideo();
+        this.repro1 = new mPlayVideo();
         //System.out.println(btnPlay.getWidth()+" || "+btnPlay.getHeight() );
        // btnPlay.setIcon(iconSetSize("src\\resources\\img\\fondo.jpg", 50,50));
         btnVideo.setIcon(iVideo.Standard());
@@ -49,7 +49,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }
     
     public void showC(){
-        if (video || controls){
+        if (video1 || controls1){
              btnVideo.setLocation(31,552);
             btnPlay.setLocation(104,552);
             btnPause.setLocation(175,552);
@@ -66,7 +66,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
 
     }
     public void hideC(){
-        if (video || !controls){
+        if (video1 || !controls1){
             btnVideo.setLocation(1300,800);
             btnPlay.setLocation(1300,800);
             btnPause.setLocation(1300,800);
@@ -371,8 +371,8 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnPlayMouseReleased
 
     private void btnPlayMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPlayMouseClicked
-        if(video){
-            repro.play();
+        if(video1){
+            repro1.play();
         }
     }//GEN-LAST:event_btnPlayMouseClicked
 
@@ -386,8 +386,8 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnPlayMouseExited
 
     private void btnPauseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPauseMouseClicked
-        if(video){
-            repro.pause();
+        if(video1){
+            repro1.pause();
         }
   
     }//GEN-LAST:event_btnPauseMouseClicked
@@ -409,8 +409,8 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnPauseMouseReleased
 
     private void btnMuteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMuteMouseClicked
-        if(video){
-            repro.setVolume(0);
+        if(video1){
+            repro1.setVolume(0);
             vVolume.setValue((int)(0.1));
         }
     }//GEN-LAST:event_btnMuteMouseClicked
@@ -432,21 +432,21 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnMuteMouseReleased
 
     private void btnMaxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMaxMouseClicked
-        if(video){
+        if(video1){
             try {
                 
-                double v = repro.getVolume();
+                double v = repro1.getVolume();
                 if (v > 0.9){
                     System.out.println("volumen máximo");
                 }else{
-                    v = repro.getVolume()+0.1;
+                    v = repro1.getVolume()+0.1;
                 }
                 
                 
-                repro.setVolume(v);
+                repro1.setVolume(v);
                 System.out.println("Max volumen: "+v);
                 
-               // repro.setVolume((double)this.vVolume.getValue()/100);
+               // repro1.setVolume((double)this.vVolume.getValue()/100);
                 
                vVolume.setValue((int)(v*10));
             } catch (Exception e) {
@@ -472,21 +472,21 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnMaxMouseReleased
 
     private void btnMinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMinMouseClicked
-        if(video){
+        if(video1){
             try {
                 
-                double v = repro.getVolume();
+                double v = repro1.getVolume();
                 if (v < 0.1){
                     System.out.println("volumen máximo");
                 }else{
-                    v = repro.getVolume()-0.1;
+                    v = repro1.getVolume()-0.1;
                 }
                 
                 
-                repro.setVolume(v);
+                repro1.setVolume(v);
                 System.out.println("Min volumen: "+v);
                 
-               // repro.setVolume((double)this.vVolume.getValue()/100);
+               // repro1.setVolume((double)this.vVolume.getValue()/100);
                 
                vVolume.setValue((int)(v*10));
             } catch (Exception e) {
@@ -521,29 +521,29 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         System.out.println("X : "+dX+"\nY : "+dY);
         
         
-        if (!video){
+        if (!video1){
             try {
-                if(this.repro.getMediaplayer()!= null){
-                    repro.pause();
+                if(this.repro1.getMediaplayer()!= null){
+                    repro1.pause();
                 }
                 if (!path.isEmpty()){
 
-                    repro.setPath(path.replace("\\", "/"));
-                        repro.setJpanel(pVideo);
-                        repro.showVideo();
-                        repro.play();
+                    repro1.setPath(path.replace("\\", "/"));
+                        repro1.setJpanel(pVideo);
+                        repro1.showVideo();
+                        repro1.play();
                         
-                        repro.setVolume(0.0); // solo antibug
+                        repro1.setVolume(0.0); // solo antibug
                         
                         lTitle.setText(tttlitle);
-                        video = true;
+                        video1 = true;
 
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null,"There was a mistake mientras ");
                 }
             }else{
-                repro.play();
+                repro1.play();
             }
     }//GEN-LAST:event_btnVideoMouseClicked
 
@@ -564,7 +564,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnVideoMouseReleased
 
     private void vVolumeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_vVolumeStateChanged
-        repro.setVolume((double)this.vVolume.getValue()/10);
+        repro1.setVolume((double)this.vVolume.getValue()/10);
     }//GEN-LAST:event_vVolumeStateChanged
 
     private void imgFondoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgFondoMouseEntered
@@ -580,13 +580,13 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_pVideoMouseClicked
 
     private void btnControlsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnControlsMouseClicked
-       if (controls){
+       if (controls1){
            System.out.println("controls =  False");
-           controls = false;
+           controls1 = false;
            hideC();
        }else{
            System.out.println("control = True");
-           controls = true;
+           controls1 = true;
            showC();
        }
     }//GEN-LAST:event_btnControlsMouseClicked

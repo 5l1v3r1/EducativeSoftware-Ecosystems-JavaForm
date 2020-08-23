@@ -18,13 +18,13 @@ public class vVideo2 extends javax.swing.JInternalFrame {
     private final int square = 50;
     private final String tttlitle = "Video de ecosistemas";
     private final String path= "src\\resources\\vid\\VID-20191109-WA0025.mp4";
-    private mIconX iPlay = new mIconX("src\\resources\\img\\icon\\11.png",square,square);
-    private mIconX iOcult = new mIconX("src\\resources\\img\\icon\\18.png",square,square);
-    private mIconX iVideo = new mIconX("src\\resources\\img\\icon\\5.png",square,square);
-    private mIconX iPause = new mIconX("src\\resources\\img\\icon\\7.png",square,square);
-    private mIconX iMute = new mIconX("src\\resources\\img\\icon\\4.png",square,square);
-    private mIconX iMin = new mIconX("src\\resources\\img\\icon\\34.png",square,square); 
-    private mIconX iMax = new mIconX("src\\resources\\img\\icon\\35.png",square,square); 
+    private mIconX iPlay = new mIconX("\\resources\\img\\icon\\11.png",square,square);
+    private mIconX iOcult = new mIconX("\\resources\\img\\icon\\18.png",square,square);
+    private mIconX iVideo = new mIconX("\\resources\\img\\icon\\5.png",square,square);
+    private mIconX iPause = new mIconX("\\resources\\img\\icon\\7.png",square,square);
+    private mIconX iMute = new mIconX("\\resources\\img\\icon\\4.png",square,square);
+    private mIconX iMin = new mIconX("\\resources\\img\\icon\\34.png",square,square); 
+    private mIconX iMax = new mIconX("\\resources\\img\\icon\\35.png",square,square); 
     
     
 
