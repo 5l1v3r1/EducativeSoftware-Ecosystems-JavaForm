@@ -1,6 +1,5 @@
 package model;
 import java.awt.BorderLayout;
-import java.io.File;
 import javafx.embed.swing.JFXPanel;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -14,20 +13,20 @@ import javax.swing.JPanel;
 
 public class mPlayVideo {
     
-    private JFXPanel jfxpanel;
+    private JFXPanel panell;
     private JPanel jpanel;
     private MediaPlayer mediaplayer;
     private Media media;
     private MediaView mediaView;
     private Scene scene;
-    private File file;
+
     private String path;
     private int H;
     private int W;
     
     // Constructor
     public mPlayVideo(){
-        this.jfxpanel = new JFXPanel();
+        this.panell = new JFXPanel();
 
     }
     public void setJpanel(JPanel jpanel) {
@@ -40,7 +39,6 @@ public class mPlayVideo {
     public MediaPlayer getMediaplayer() {
         return mediaplayer;
     }
-
     /**
      * @param path the path to set
      */
@@ -53,7 +51,6 @@ public class mPlayVideo {
             //getMediaplayer().
              W = this.jpanel.getWidth();
              H = this.jpanel.getHeight();
-            this.file = new File(this.path);
             //this.media = new Media(this.file.toURI().toString());
             
             this.media = new Media(getClass().getResource(this.path).toString());
@@ -63,17 +60,14 @@ public class mPlayVideo {
             this.mediaView.setFitHeight(H);
             this.mediaView.setFitWidth(W);
             this.scene = new Scene(new Group(this.mediaView)); 
-            this.jfxpanel.setSize(W,H);
-            this.jfxpanel.setScene(this.scene);
+            this.panell.setSize(W,H);
+            this.panell.setScene(this.scene);
             this.getMediaplayer().setCycleCount(MediaPlayer.INDEFINITE);
             
             // border
             this.jpanel.setLayout(new BorderLayout());
-            this.jpanel.add(this.jfxpanel, BorderLayout.CENTER);
-            
-            
-            
-            
+            this.jpanel.add(this.panell, BorderLayout.CENTER);
+
         } catch (MediaException e) {
             JOptionPane.showMessageDialog(null,"There was a mistake while opening a video or file","Error while opening ",JOptionPane.ERROR_MESSAGE);
         }

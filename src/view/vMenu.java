@@ -3,10 +3,11 @@ package view;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
+import model.FontX;
 
 public class vMenu extends javax.swing.JFrame  {
 
-    private vAbout about = null;
+    private vAboutDDD about = null;
     private vFinalizar finalizar = null;
     private vJuegoAnimales juego_animales = null;
     private vOrganizaFiguras organizar = null;
@@ -17,31 +18,21 @@ public class vMenu extends javax.swing.JFrame  {
     private int x = 5;
     private int y = 5;
     private final int velocidad =6;
-    
+    private final String pathFont = "\\resources\\fonts\\HelloEtchASketch.ttf"; 
+    private final FontX font = new FontX();
     public vMenu() {
         initComponents();
         setLocationRelativeTo(null);
+        
         panel.setFocusable(true);
         panel.setSize(new Dimension(12,21));
         imgAve.setLocation(y,x);
         //setIconImage(new ImageIcon("/src/resources/ico/seph.ico").getImage());
          setIconImage(new ImageIcon(getClass().getResource("/resources/img/Circulo Blanco.png")).getImage());
-        /*
-        int x = 15; 
-        while(true){
-            textMain.setFont(new Font("Arial", Font.ITALIC, x));
-            x++;
-            System.out.println("size: "+x);
-            try {
-                Thread.sleep(100);
-            } catch (Exception e) {
-                System.out.println("error in wait 100 mini");
-            }
-            if (x == 50){
-                break;
-            }
-        }
-        */
+        textMain.setFont(font.changed(pathFont , 110));
+         
+
+   
         
     }
 
@@ -192,18 +183,23 @@ public class vMenu extends javax.swing.JFrame  {
     }//GEN-LAST:event_juegoMMouseClicked
 
     private void aboutMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMMouseClicked
-        System.out.println("-----[Form]-----");
-        if (about == null || about.isClosed()){
-            System.out.println("[Form] - The form is created - vAbout ");
-            about = new vAbout();
-            this.panel.add(about);
-            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
-            about.show(true);
-        }else{
-            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
-            System.out.println("[Form] - The form exits");
-            
-        }
+            vAbout a =new  vAbout();
+            a.setVisible(true);
+
+
+
+///System.out.println("-----[Form]-----");
+//        if (about == null || about.isClosed()){
+//            System.out.println("[Form] - The form is created - vAbout ");
+//            about = new vAboutDDD();
+//            this.panel.add(about);
+//            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
+//            about.show(true);
+//        }else{
+//            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
+//            System.out.println("[Form] - The form exits");
+//            
+//        }
     }//GEN-LAST:event_aboutMMouseClicked
 
     private void panelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panelKeyPressed
@@ -273,6 +269,12 @@ public class vMenu extends javax.swing.JFrame  {
         System.out.println("-----[Form]-----");
         if (video1 == null || video1.isClosed()){
             System.out.println("[Form] - The form is created - vVideo2");
+            try {
+                video1.dispose();
+            } catch (Exception e) {
+                System.out.println("Error en dispose();");
+            }
+            
             video1 = new vVideo1();
             this.panel.add(video1);
             video1.setLocation((W/2-(video1.getWidth()/2)), (H/2)-(video1.getHeight()/2));

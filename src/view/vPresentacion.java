@@ -30,8 +30,7 @@ public class vPresentacion extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
+        setFocusCycleRoot(false);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/background/selva/selva1.jpg"))); // NOI18N
 

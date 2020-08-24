@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package view;
+import java.awt.event.KeyEvent;
 import model.mIconX;
 
 /**
@@ -13,12 +14,20 @@ import model.mIconX;
 public class vJuegoAnimales extends javax.swing.JInternalFrame {
     
     private final int sizeX = 356, sizeY = 200;
-    private mIconX iPoloNorte = new mIconX("\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY);
-    private mIconX iDesierto = new mIconX("\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY);
-    private mIconX iFondoRio = new mIconX("\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY);
-    private mIconX iFondoMar= new mIconX("\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY);
-    private mIconX iCielo = new mIconX("\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY);
-    private mIconX iSelva= new mIconX("\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY);
+    private final int iAnimales = 80;
+    private final mIconX iPoloNorte = new mIconX("\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY);
+    private final mIconX iDesierto = new mIconX("\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY);
+    private final mIconX iFondoRio = new mIconX("\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY);
+    private final mIconX iFondoMar= new mIconX("\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY);
+    private final mIconX iCielo = new mIconX("\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY);
+    private final mIconX iSelva= new mIconX("\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY);
+    // Imagenes de animales 
+    private final mIconX iPinguino= new mIconX("\\resources\\img\\animalitos\\pinguino.png",iAnimales,iAnimales);
+    
+    private int x = 459;
+    private int y = 69;
+    private final int velocidad =10;
+    
     
     public vJuegoAnimales() {
         initComponents();
@@ -28,6 +37,11 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
         imgSelva.setIcon(iSelva.Standard());
         imgFondoMar.setIcon(iFondoMar.Standard());
         imgCielo.setIcon(iCielo.Standard());
+        
+        // animales :
+        imgPinguino.setLocation(x, y);
+
+        imgPinguino.setFocusable(true);
         
         
     }
@@ -49,10 +63,9 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
         imgCielo = new javax.swing.JLabel();
         imgFondoMar = new javax.swing.JLabel();
         imgSelva = new javax.swing.JLabel();
+        imgPinguino = new javax.swing.JLabel();
 
         setClosable(true);
-        setIconifiable(true);
-        setMaximizable(true);
         setTitle("Juego Relacionar");
         setName("aaaaa"); // NOI18N
 
@@ -172,6 +185,28 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
             }
         });
 
+        imgPinguino.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgPinguino.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/icon/0.png"))); // NOI18N
+        imgPinguino.setAlignmentX(0.5F);
+        imgPinguino.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        imgPinguino.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgPinguino.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgPinguinoMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgPinguinoMouseEntered(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                imgPinguinoMousePressed(evt);
+            }
+        });
+        imgPinguino.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                imgPinguinoKeyPressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -180,11 +215,17 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgCielo, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(imgPoloNorte, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imgPoloNorte, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(91, 91, 91)
+                                .addComponent(imgPinguino, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgFondoMar, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +252,10 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
                             .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(imgCielo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(29, 29, 29)
+                        .addComponent(imgPinguino, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -230,19 +274,22 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void imgRioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgRioMouseEntered
-        imgRio.setIcon(iFondoRio.Entered());
+        //imgRio.setIcon(iFondoRio.Entered());
+ System.out.println("\n\nPinguino:\nX: "+imgPinguino.getX()+"\nY: "+imgPinguino.getY());
     }//GEN-LAST:event_imgRioMouseEntered
 
     private void imgRioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgRioMouseExited
-        imgRio.setIcon(iFondoRio.Exited());
+        //imgRio.setIcon(iFondoRio.Exited());
     }//GEN-LAST:event_imgRioMouseExited
 
     private void imgDesiertoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgDesiertoMouseEntered
         imgDesierto.setIcon(iDesierto.Entered());
+
     }//GEN-LAST:event_imgDesiertoMouseEntered
 
     private void imgDesiertoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgDesiertoMouseExited
         imgDesierto.setIcon(iDesierto.Standard());
+
     }//GEN-LAST:event_imgDesiertoMouseExited
 
     private void imgPoloNorteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPoloNorteMouseExited
@@ -277,11 +324,42 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
         imgSelva.setIcon(iSelva.Exited());
     }//GEN-LAST:event_imgSelvaMouseExited
 
+    private void imgPinguinoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPinguinoMousePressed
+        
+    }//GEN-LAST:event_imgPinguinoMousePressed
+
+    private void imgPinguinoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPinguinoMouseEntered
+
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
+                
+            }
+
+    }//GEN-LAST:event_imgPinguinoMouseEntered
+
+    private void imgPinguinoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_imgPinguinoKeyPressed
+
+        switch(evt.getExtendedKeyCode()){
+            case KeyEvent.VK_UP:    System.out.println("press Key Up");     y = y-velocidad; break;
+            case KeyEvent.VK_DOWN:  System.out.println("press Key Down");   y = y+velocidad; break;
+            case KeyEvent.VK_LEFT:  System.out.println("press Key Left");   x = x-velocidad; break;
+            case KeyEvent.VK_RIGHT: System.out.println("press Key Right");  x = x+velocidad; break;
+        }
+        imgPinguino.setLocation(x,y);
+         System.out.println("\n\nevent pressPinguino:\nX: "+imgPinguino.getX()+"\nY: "+imgPinguino.getY());
+    }//GEN-LAST:event_imgPinguinoKeyPressed
+
+    private void imgPinguinoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPinguinoMouseClicked
+       imgPinguino.setFocusable(true);
+    }//GEN-LAST:event_imgPinguinoMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgCielo;
     private javax.swing.JLabel imgDesierto;
     private javax.swing.JLabel imgFondoMar;
+    private javax.swing.JLabel imgPinguino;
     private javax.swing.JLabel imgPoloNorte;
     private javax.swing.JLabel imgRio;
     private javax.swing.JLabel imgSelva;
