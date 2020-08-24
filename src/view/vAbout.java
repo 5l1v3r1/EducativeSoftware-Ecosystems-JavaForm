@@ -34,10 +34,6 @@ public class vAbout extends javax.swing.JFrame {
         imgclose.setIcon(iClose.Standard());
         imgSEPH.setIcon(iS.Standard());
         
-       
-        
-        
-        
     }
 
     /**

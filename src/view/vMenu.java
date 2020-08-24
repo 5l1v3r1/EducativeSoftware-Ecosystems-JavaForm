@@ -4,10 +4,11 @@ import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import model.FontX;
+import model.playSound;
 
 public class vMenu extends javax.swing.JFrame  {
 
-    private vAboutDDD about = null;
+
     private vFinalizar finalizar = null;
     private vJuegoAnimales juego_animales = null;
     private vOrganizaFiguras organizar = null;
@@ -20,6 +21,16 @@ public class vMenu extends javax.swing.JFrame  {
     private final int velocidad =6;
     private final String pathFont = "\\resources\\fonts\\HelloEtchASketch.ttf"; 
     private final FontX font = new FontX();
+    
+    // Sonidos 
+     private final String pathCofre = "src\\resources\\snd\\selva1.wav";
+     public playSound iACofre;
+     private final String pathbtn   = "src\\resources\\snd\\btn.wav";
+     public playSound iBtn;
+    
+    
+    
+    
     public vMenu() {
         initComponents();
         setLocationRelativeTo(null);
@@ -31,8 +42,6 @@ public class vMenu extends javax.swing.JFrame  {
          setIconImage(new ImageIcon(getClass().getResource("/resources/img/Circulo Blanco.png")).getImage());
         textMain.setFont(font.changed(pathFont , 110));
          
-
-   
         
     }
 
@@ -60,6 +69,11 @@ public class vMenu extends javax.swing.JFrame  {
         setMinimumSize(new java.awt.Dimension(1280, 720));
         setName("frmMenu"); // NOI18N
         setResizable(false);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panel.setForeground(new java.awt.Color(153, 255, 153));
@@ -106,6 +120,9 @@ public class vMenu extends javax.swing.JFrame  {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 organizaMMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                organizaMMouseEntered(evt);
+            }
         });
         menuBar.add(organizaM);
 
@@ -113,6 +130,9 @@ public class vMenu extends javax.swing.JFrame  {
         juegoM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 juegoMMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                juegoMMouseEntered(evt);
             }
         });
         menuBar.add(juegoM);
@@ -122,6 +142,9 @@ public class vMenu extends javax.swing.JFrame  {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 presentacionMMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                presentacionMMouseEntered(evt);
+            }
         });
         menuBar.add(presentacionM);
 
@@ -129,6 +152,9 @@ public class vMenu extends javax.swing.JFrame  {
         video1M.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 video1MMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                video1MMouseEntered(evt);
             }
         });
         menuBar.add(video1M);
@@ -138,6 +164,9 @@ public class vMenu extends javax.swing.JFrame  {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 video2MMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                video2MMouseEntered(evt);
+            }
         });
         menuBar.add(video2M);
 
@@ -145,6 +174,9 @@ public class vMenu extends javax.swing.JFrame  {
         finalizarM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 finalizarMMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                finalizarMMouseEntered(evt);
             }
         });
         menuBar.add(finalizarM);
@@ -154,6 +186,9 @@ public class vMenu extends javax.swing.JFrame  {
         aboutM.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 aboutMMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                aboutMMouseEntered(evt);
             }
         });
         menuBar.add(aboutM);
@@ -302,6 +337,86 @@ public class vMenu extends javax.swing.JFrame  {
         
         
     }//GEN-LAST:event_video2MMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        new Thread(){
+            public void start(){
+                iACofre = new playSound(pathCofre);
+                iACofre.Init();
+                iACofre.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void organizaMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizaMMouseEntered
+       new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_organizaMMouseEntered
+
+    private void juegoMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_juegoMMouseEntered
+      new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_juegoMMouseEntered
+
+    private void presentacionMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_presentacionMMouseEntered
+        new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_presentacionMMouseEntered
+
+    private void video1MMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video1MMouseEntered
+       new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_video1MMouseEntered
+
+    private void video2MMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video2MMouseEntered
+        new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_video2MMouseEntered
+
+    private void finalizarMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_finalizarMMouseEntered
+        new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_finalizarMMouseEntered
+
+    private void aboutMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMMouseEntered
+        new Thread(){
+            public void start(){
+                iBtn= new playSound(pathbtn);
+                iBtn.Init();
+                iBtn.Play();
+            }
+        }.start();
+    }//GEN-LAST:event_aboutMMouseEntered
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
