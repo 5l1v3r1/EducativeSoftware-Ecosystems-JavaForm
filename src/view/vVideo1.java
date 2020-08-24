@@ -80,7 +80,6 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         btnVideo = new javax.swing.JLabel();
         imgFondo = new javax.swing.JLabel();
         btnControls = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(102, 102, 102));
         setClosable(true);
@@ -274,41 +273,28 @@ public class vVideo1 extends javax.swing.JInternalFrame {
             }
         });
 
-        jLabel1.setText("Cerrar");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout pVideoLayout = new javax.swing.GroupLayout(pVideo);
         pVideo.setLayout(pVideoLayout);
         pVideoLayout.setHorizontalGroup(
             pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pVideoLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
                 .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pVideoLayout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pVideoLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
-                                .addComponent(imgFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(338, 338, 338))
-                            .addGroup(pVideoLayout.createSequentialGroup()
-                                .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(pVideoLayout.createSequentialGroup()
-                                        .addComponent(btnVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(16, 16, 16)
-                                        .addComponent(btnPause, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(227, 227, 227)
-                                        .addComponent(vVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 367, Short.MAX_VALUE)
+                        .addComponent(imgFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(338, 338, 338))
                     .addGroup(pVideoLayout.createSequentialGroup()
-                        .addGap(322, 322, 322)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(pVideoLayout.createSequentialGroup()
+                                .addComponent(btnVideo, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnPlay, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)
+                                .addComponent(btnPause, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(227, 227, 227)
+                                .addComponent(vVolume, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnMax, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,9 +312,7 @@ public class vVideo1 extends javax.swing.JInternalFrame {
                     .addComponent(lTitle))
                 .addGroup(pVideoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pVideoLayout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(5, 5, 5)
+                        .addGap(71, 71, 71)
                         .addComponent(imgFondo, javax.swing.GroupLayout.PREFERRED_SIZE, 339, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pVideoLayout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -587,12 +571,6 @@ public class vVideo1 extends javax.swing.JInternalFrame {
         btnControls.setIcon(iOcult.Released());
     }//GEN-LAST:event_btnControlsMouseReleased
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.out.println("Evento cerrar");
-        this.dispose();
-        
-    }//GEN-LAST:event_jLabel1MouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnControls;
@@ -603,7 +581,6 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     private javax.swing.JLabel btnPlay;
     private javax.swing.JLabel btnVideo;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lTitle;
     private javax.swing.JPanel pVideo;
     private javax.swing.JSlider vVolume;

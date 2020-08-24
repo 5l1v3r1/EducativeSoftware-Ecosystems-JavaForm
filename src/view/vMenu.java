@@ -1,5 +1,6 @@
 
 package view;
+import java.applet.AudioClip;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
@@ -22,12 +23,15 @@ public class vMenu extends javax.swing.JFrame  {
     private final String pathFont = "\\resources\\fonts\\HelloEtchASketch.ttf"; 
     private final FontX font = new FontX();
     
-    // Sonidos 
-     private final String pathCofre = "src\\resources\\snd\\selva1.wav";
-     public playSound iACofre;
-     private final String pathbtn   = "src\\resources\\snd\\btn.wav";
-     public playSound iBtn;
+
+     // Sondio 2.0
+    private AudioClip sonido;
+    private boolean playing = false;
+    private final  String pathSonido = "\\resources\\snd\\btn.wav".replace("\\", "/");
     
+    //sonido de fondo
+    private AudioClip sonidoFondo;
+    private final  String pathFondo = "\\resources\\snd\\selva1.wav".replace("\\", "/");
     
     
     
@@ -41,7 +45,8 @@ public class vMenu extends javax.swing.JFrame  {
         //setIconImage(new ImageIcon("/src/resources/ico/seph.ico").getImage());
          setIconImage(new ImageIcon(getClass().getResource("/resources/img/Circulo Blanco.png")).getImage());
         textMain.setFont(font.changed(pathFont , 110));
-         
+         sonido = java.applet.Applet.newAudioClip(getClass().getResource(pathSonido));
+         sonidoFondo = java.applet.Applet.newAudioClip(getClass().getResource(pathFondo));
         
     }
 
@@ -220,21 +225,6 @@ public class vMenu extends javax.swing.JFrame  {
     private void aboutMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMMouseClicked
             vAbout a =new  vAbout();
             a.setVisible(true);
-
-
-
-///System.out.println("-----[Form]-----");
-//        if (about == null || about.isClosed()){
-//            System.out.println("[Form] - The form is created - vAbout ");
-//            about = new vAboutDDD();
-//            this.panel.add(about);
-//            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
-//            about.show(true);
-//        }else{
-//            about.setLocation((W/2-(about.getWidth()/2)), (H/2)-(about.getHeight()/2));
-//            System.out.println("[Form] - The form exits");
-//            
-//        }
     }//GEN-LAST:event_aboutMMouseClicked
 
     private void panelKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panelKeyPressed
@@ -340,81 +330,73 @@ public class vMenu extends javax.swing.JFrame  {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         new Thread(){
-            public void start(){
-                iACofre = new playSound(pathCofre);
-                iACofre.Init();
-                iACofre.Play();
-            }
+                public void start(){
+                   sonidoFondo.play();
+                   System.out.println("Se reprodució audio fondo");
+               }
         }.start();
     }//GEN-LAST:event_formWindowOpened
 
     private void organizaMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizaMMouseEntered
        new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_organizaMMouseEntered
 
     private void juegoMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_juegoMMouseEntered
       new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_juegoMMouseEntered
 
     private void presentacionMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_presentacionMMouseEntered
         new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_presentacionMMouseEntered
 
     private void video1MMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video1MMouseEntered
        new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_video1MMouseEntered
 
     private void video2MMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_video2MMouseEntered
         new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_video2MMouseEntered
 
     private void finalizarMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_finalizarMMouseEntered
         new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_finalizarMMouseEntered
 
     private void aboutMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutMMouseEntered
         new Thread(){
-            public void start(){
-                iBtn= new playSound(pathbtn);
-                iBtn.Init();
-                iBtn.Play();
-            }
+                public void start(){
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
         }.start();
     }//GEN-LAST:event_aboutMMouseEntered
 

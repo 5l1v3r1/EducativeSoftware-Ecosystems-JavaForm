@@ -16,7 +16,7 @@ public class controller {
 
     public static void main(String[] args) {
 
-        int  delay = 3 ;
+        int  delay = 0 ;
         vIndex vlogo = new vIndex();
         vlogo.setLocationRelativeTo(null);
         vlogo.setVisible(true);
