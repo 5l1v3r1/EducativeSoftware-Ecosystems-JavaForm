@@ -6,6 +6,7 @@
 package view;
 
 import com.sun.awt.AWTUtilities;
+import java.applet.AudioClip;
 import javax.swing.ImageIcon;
 
 
@@ -59,8 +60,10 @@ public class vIndex extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/gif/loading.gif"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 360, 60));
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 900, 60));
 
         imgfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/main.png"))); // NOI18N
         getContentPane().add(imgfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -72,6 +75,15 @@ public class vIndex extends javax.swing.JFrame {
     }//GEN-LAST:event_formComponentAdded
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+        final  String pathSonido = "\\resources\\snd\\rugido.wav".replace("\\", "/");
+        new Thread(){
+                public void start(){
+                   AudioClip sonido = java.applet.Applet.newAudioClip(getClass().getResource(pathSonido));
+                   sonido.play();
+                   System.out.println("Se reprodució audio");
+               }
+        }.start();
         
         
         

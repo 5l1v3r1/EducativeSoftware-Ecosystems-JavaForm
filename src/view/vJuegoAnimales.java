@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package view;
+import java.applet.AudioClip;
 import java.awt.event.KeyEvent;
 import model.mIconX;
 
@@ -13,20 +14,45 @@ import model.mIconX;
  */
 public class vJuegoAnimales extends javax.swing.JInternalFrame {
     
-    private final int sizeX = 356, sizeY = 200;
+    private final int sizeX = 371, sizeY = 215;
+    private final int zoomImg = 20;
     private final int iAnimales = 80;
-    private final mIconX iPoloNorte = new mIconX("\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY);
-    private final mIconX iDesierto = new mIconX("\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY);
-    private final mIconX iFondoRio = new mIconX("\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY);
-    private final mIconX iFondoMar= new mIconX("\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY);
-    private final mIconX iCielo = new mIconX("\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY);
-    private final mIconX iSelva= new mIconX("\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY);
+    private final mIconX iPoloNorte = new mIconX("\\resources\\img\\ecosistemas\\nieve.jpg",sizeX,sizeY,zoomImg);
+    private final mIconX iDesierto = new mIconX("\\resources\\img\\ecosistemas\\desierto.jpg",sizeX,sizeY,zoomImg);
+    private final mIconX iFondoRio = new mIconX("\\resources\\img\\ecosistemas\\fondo-rio.jpg",sizeX,sizeY,zoomImg);
+    private final mIconX iFondoMar= new mIconX("\\resources\\img\\ecosistemas\\fono-de-mar.jpg",sizeX,sizeY,zoomImg);
+    private final mIconX iCielo = new mIconX("\\resources\\img\\ecosistemas\\cielo.jpg",sizeX,sizeY,zoomImg);
+    private final mIconX iSelva= new mIconX("\\resources\\img\\ecosistemas\\selva.jpg",sizeX,sizeY,zoomImg);
     // Imagenes de animales 
-    private final mIconX iPinguino= new mIconX("\\resources\\img\\animalitos\\pinguino.png",iAnimales,iAnimales);
+    private final mIconX iPinguino= new mIconX("\\resources\\img\\animalitos\\pinguino.png",iAnimales,iAnimales,zoomImg);
     
     private int x = 459;
     private int y = 69;
     private final int velocidad =10;
+    
+    
+    // Audio Cofre Magico
+    private final String pathANevado =  "\\resources\\snd\\nieve.wav";
+    private final AudioClip sNevado;
+    // Audio Video
+    private final String pathARio =  "\\resources\\snd\\rio.wav";
+    private final AudioClip sRio;
+    // adudio Musica
+    private final String pathACielo = "\\resources\\snd\\viento.wav"; 
+    private final AudioClip sCielo;
+
+    // Audio Cofre Magico
+    private final String pathADesierto =  "\\resources\\snd\\desierto.wav";
+    private final AudioClip sDesierto;
+    // Audio Video
+    private final String pathAMar =  "\\resources\\snd\\fondo-de-mar.wav";
+    private final AudioClip sMar;
+    // adudio Musica
+    private final String pathASelva = "\\resources\\snd\\selva-fondo.wav"; 
+    private final AudioClip sSelva;
+    
+    private boolean playing = false;
+    
     
     
     public vJuegoAnimales() {
@@ -42,6 +68,14 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
         imgPinguino.setLocation(x, y);
 
         imgPinguino.setFocusable(true);
+        
+        // Sonidos
+        sNevado = java.applet.Applet.newAudioClip(getClass().getResource(pathANevado.replace("\\", "/")));
+        sRio = java.applet.Applet.newAudioClip(getClass().getResource(pathARio.replace("\\", "/")));
+        sDesierto = java.applet.Applet.newAudioClip(getClass().getResource(pathADesierto.replace("\\", "/")));
+        sCielo = java.applet.Applet.newAudioClip(getClass().getResource(pathACielo.replace("\\", "/")));
+        sMar = java.applet.Applet.newAudioClip(getClass().getResource(pathAMar.replace("\\", "/")));
+        sSelva= java.applet.Applet.newAudioClip(getClass().getResource(pathASelva.replace("\\", "/")));
         
         
     }
@@ -225,7 +259,7 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 440, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(91, 91, 91)
-                                .addComponent(imgPinguino, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(imgPinguino, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(imgFondoMar, javax.swing.GroupLayout.PREFERRED_SIZE, 356, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -237,25 +271,24 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                            .addGap(12, 12, 12)
-                            .addComponent(imgDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)
-                            .addComponent(imgFondoMar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(imgSelva, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(imgPoloNorte, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(imgCielo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGap(12, 12, 12)
+                        .addComponent(imgDesierto, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(12, 12, 12)
+                        .addComponent(imgFondoMar, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(imgSelva, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(imgPoloNorte, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(imgRio, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(imgCielo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(29, 29, 29)
-                        .addComponent(imgPinguino, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(imgPinguino, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -274,54 +307,170 @@ public class vJuegoAnimales extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void imgRioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgRioMouseEntered
-        //imgRio.setIcon(iFondoRio.Entered());
- System.out.println("\n\nPinguino:\nX: "+imgPinguino.getX()+"\nY: "+imgPinguino.getY());
+        imgRio.setIcon(iFondoRio.Entered());
+        System.out.println("audio acction ");
+        if (!playing){
+            
+            new Thread(){
+                public void start(){
+                   sRio.play();
+                   playing = true;
+                   System.out.println("Se reprodució audio");
+               }
+            }.start();
+        } else{
+            playing = false;
+            sRio.stop();
+        }
+
     }//GEN-LAST:event_imgRioMouseEntered
 
     private void imgRioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgRioMouseExited
-        //imgRio.setIcon(iFondoRio.Exited());
+        imgRio.setIcon(iFondoRio.Exited());
+        try {
+            playing = false;
+            sRio.stop();
+        } catch (Exception e) {
+        }
+        
     }//GEN-LAST:event_imgRioMouseExited
 
     private void imgDesiertoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgDesiertoMouseEntered
         imgDesierto.setIcon(iDesierto.Entered());
+        System.out.println("audio acction ");
+        if (!playing){
+            
+            new Thread(){
+                public void start(){
+                   sDesierto.play();
+                   playing = true;
+                   System.out.println("Se reprodució audio");
+               }
+            }.start();
+        } else{
+            playing = false;
+            sDesierto.stop();
+        }
 
     }//GEN-LAST:event_imgDesiertoMouseEntered
 
     private void imgDesiertoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgDesiertoMouseExited
         imgDesierto.setIcon(iDesierto.Standard());
-
+        try {
+            playing = false;
+            sDesierto.stop();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_imgDesiertoMouseExited
 
     private void imgPoloNorteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPoloNorteMouseExited
         imgPoloNorte.setIcon(iPoloNorte.Standard());
+        try {
+            playing = false;
+            sNevado.stop();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_imgPoloNorteMouseExited
 
     private void imgPoloNorteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPoloNorteMouseEntered
         imgPoloNorte.setIcon(iPoloNorte.Entered());
+        
+        System.out.println("audio acction ");
+        if (!playing){
+            
+            new Thread(){
+                public void start(){
+                   sNevado.play();
+                   playing = true;
+                   System.out.println("Se reprodució audio");
+               }
+            }.start();
+        } else{
+            playing = false;
+            sNevado.stop();
+        }
     }//GEN-LAST:event_imgPoloNorteMouseEntered
 
     private void imgCieloMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCieloMouseEntered
         imgCielo.setIcon(iCielo.Entered());
+        
+        System.out.println("audio acction ");
+        if (!playing){
+            
+            new Thread(){
+                public void start(){
+                   sCielo.play();
+                   playing = true;
+                   System.out.println("Se reprodució audio");
+               }
+            }.start();
+        } else{
+            playing = false;
+            sCielo.stop();
+        }
     }//GEN-LAST:event_imgCieloMouseEntered
 
     private void imgCieloMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgCieloMouseExited
         imgCielo.setIcon(iCielo.Standard());
+        try {
+            playing = false;
+            sCielo.stop();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_imgCieloMouseExited
 
     private void imgFondoMarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgFondoMarMouseEntered
         imgFondoMar.setIcon(iFondoMar.Entered());
+        System.out.println("audio acction ");
+        if (!playing){
+            
+            new Thread(){
+                public void start(){
+                   sMar.play();
+                   playing = true;
+                   System.out.println("Se reprodució audio");
+               }
+            }.start();
+        } else{
+            playing = false;
+            sMar.stop();
+        }
     }//GEN-LAST:event_imgFondoMarMouseEntered
 
     private void imgFondoMarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgFondoMarMouseExited
         imgFondoMar.setIcon(iFondoMar.Standard());
+        try {
+            playing = false;
+            sMar.stop();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_imgFondoMarMouseExited
 
     private void imgSelvaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgSelvaMouseEntered
         imgSelva.setIcon(iSelva.Entered());
+        System.out.println("audio acction ");
+        if (!playing){
+            
+            new Thread(){
+                public void start(){
+                   sSelva.play();
+                   playing = true;
+                   System.out.println("Se reprodució audio");
+               }
+            }.start();
+        } else{
+            playing = false;
+            sSelva.stop();
+        }
     }//GEN-LAST:event_imgSelvaMouseEntered
 
     private void imgSelvaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgSelvaMouseExited
         imgSelva.setIcon(iSelva.Exited());
+        try {
+            playing = false;
+            sSelva.stop();
+        } catch (Exception e) {
+        }
     }//GEN-LAST:event_imgSelvaMouseExited
 
     private void imgPinguinoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imgPinguinoMousePressed

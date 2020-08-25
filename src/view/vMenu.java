@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import javax.swing.ImageIcon;
 import model.FontX;
-import model.playSound;
+
 
 public class vMenu extends javax.swing.JFrame  {
 
@@ -329,12 +329,12 @@ public class vMenu extends javax.swing.JFrame  {
     }//GEN-LAST:event_video2MMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
-        new Thread(){
-                public void start(){
-                   sonidoFondo.play();
-                   System.out.println("Se reprodució audio fondo");
-               }
-        }.start();
+//        new Thread(){
+//                public void start(){
+//                   sonidoFondo.play();
+//                   System.out.println("Se reprodució audio fondo");
+//               }
+//        }.start();
     }//GEN-LAST:event_formWindowOpened
 
     private void organizaMMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_organizaMMouseEntered

@@ -12,7 +12,7 @@ import model.mIconX;
  */
 public class vFinalizar extends javax.swing.JInternalFrame {
 
-    private final mIconX iFondo = new mIconX("\\resources\\img\\fondo.jpg",1192,670);
+    private final mIconX iFondo = new mIconX("\\resources\\img\\fondo.jpg",1192,670,5);
     private final String pathFont = "\\resources\\fonts\\Capture it 2_0.ttf"; 
     private final FontX font = new FontX();
 

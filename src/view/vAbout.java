@@ -19,9 +19,9 @@ public class vAbout extends javax.swing.JFrame {
     /**
      * Creates new form p
      */
-    private final mIconX iClose= new mIconX("\\resources\\img\\about\\cerrar.png",120,120);
-    private final mIconX iOk= new mIconX("\\resources\\img\\about\\ok.png",460,193);
-    private final mIconX iS= new mIconX("\\resources\\img\\logo solo.png",265,265);
+    private final mIconX iClose= new mIconX("\\resources\\img\\about\\cerrar.png",130,130,15);
+    private final mIconX iOk= new mIconX("\\resources\\img\\about\\ok.png",480,201,15);
+    private final mIconX iS= new mIconX("\\resources\\img\\logo solo.png",270,270,20);
 
 
     public vAbout() {
@@ -45,6 +45,7 @@ public class vAbout extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imgOk = new javax.swing.JLabel();
         imgSEPH = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -71,7 +72,6 @@ public class vAbout extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         imgclose = new javax.swing.JLabel();
         imgfondo = new javax.swing.JLabel();
-        imgOk = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -86,6 +86,28 @@ public class vAbout extends javax.swing.JFrame {
             }
         });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imgOk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imgOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/about/ok.png"))); // NOI18N
+        imgOk.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        imgOk.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imgOkMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                imgOkMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                imgOkMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                imgOkMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                imgOkMouseReleased(evt);
+            }
+        });
+        getContentPane().add(imgOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 380, 480, 220));
 
         imgSEPH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imgSEPH.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -105,9 +127,9 @@ public class vAbout extends javax.swing.JFrame {
         });
         getContentPane().add(imgSEPH, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 100, 270, 270));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         jLabel1.setText("About");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, -1, -1));
 
         jLabel19.setFont(new java.awt.Font("MS PGothic", 0, 13)); // NOI18N
         jLabel19.setText("Apache Netbeans 12");
@@ -217,32 +239,10 @@ public class vAbout extends javax.swing.JFrame {
                 imgcloseMouseReleased(evt);
             }
         });
-        getContentPane().add(imgclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 125, 125));
+        getContentPane().add(imgclose, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 0, 130, 140));
 
         imgfondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/about/panel.png"))); // NOI18N
         getContentPane().add(imgfondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 490));
-
-        imgOk.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        imgOk.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/img/about/ok.png"))); // NOI18N
-        imgOk.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        imgOk.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                imgOkMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                imgOkMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                imgOkMouseExited(evt);
-            }
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                imgOkMousePressed(evt);
-            }
-            public void mouseReleased(java.awt.event.MouseEvent evt) {
-                imgOkMouseReleased(evt);
-            }
-        });
-        getContentPane().add(imgOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 380, 460, 220));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -11,16 +11,16 @@ public class vVideo1 extends javax.swing.JInternalFrame {
     //Creamos la variable de tipo String para almacenar la ruta del video1
     private boolean video1 = false;
     private boolean controls1 = true;
-    private final int square = 50;
+    private final int square = 55;
     private final String tttlitle = "Video de ecosistemas";
     private final String path= "\\resources\\vid\\video1.mp4";
-    private final mIconX iPlay = new mIconX("\\resources\\img\\icon\\11.png",square,square);
-    private final mIconX iOcult = new mIconX("\\resources\\img\\icon\\18.png",square,square);
-    private final mIconX iVideo = new mIconX("\\resources\\img\\icon\\5.png",square,square);
-    private final mIconX iPause = new mIconX("\\resources\\img\\icon\\7.png",square,square);
-    private final mIconX iMute = new mIconX("\\resources\\img\\icon\\4.png",square,square);
-    private final mIconX iMin = new mIconX("\\resources\\img\\icon\\34.png",square,square); 
-    private final mIconX iMax = new mIconX("\\resources\\img\\icon\\35.png",square,square);
+    private final mIconX iPlay = new mIconX("\\resources\\img\\icon\\11.png",square,square,5);
+    private final mIconX iOcult = new mIconX("\\resources\\img\\icon\\18.png",square,square,5);
+    private final mIconX iVideo = new mIconX("\\resources\\img\\icon\\5.png",square,square,5);
+    private final mIconX iPause = new mIconX("\\resources\\img\\icon\\7.png",square,square,5);
+    private final mIconX iMute = new mIconX("\\resources\\img\\icon\\4.png",square,square,5);
+    private final mIconX iMin = new mIconX("\\resources\\img\\icon\\34.png",square,square,5); 
+    private final mIconX iMax = new mIconX("\\resources\\img\\icon\\35.png",square,square,5);
 
 
     public vVideo1() {
