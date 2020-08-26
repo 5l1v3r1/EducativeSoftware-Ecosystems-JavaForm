@@ -12,7 +12,7 @@ public class vVideo2 extends javax.swing.JInternalFrame {
     private boolean controls = true;
     private final int square = 55;
     private final String tttlitle = "Video de ecosistemas";
-    private final String path= "\\resources\\vid\\video1.mp4";
+    private final String path= "\\resources\\vid\\video2.mp4";
     private final mIconX iPlay = new mIconX("\\resources\\img\\icon\\11.png",square,square,5);
     private final mIconX iOcult = new mIconX("\\resources\\img\\icon\\18.png",square,square,5);
     private final mIconX iVideo = new mIconX("\\resources\\img\\icon\\5.png",square,square,5);
@@ -86,6 +86,7 @@ public class vVideo2 extends javax.swing.JInternalFrame {
 
         setBackground(new java.awt.Color(102, 102, 102));
         setClosable(true);
+        setTitle("Video | Ecosistemas");
         setFocusable(false);
         setMaximumSize(new java.awt.Dimension(1192, 670));
         setMinimumSize(new java.awt.Dimension(1192, 670));

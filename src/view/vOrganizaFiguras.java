@@ -35,6 +35,7 @@ public class vOrganizaFiguras extends javax.swing.JInternalFrame {
 
         setClosable(true);
         setResizable(true);
+        setTitle("Organizar Figuras");
         setMaximumSize(new java.awt.Dimension(1192, 670));
         setMinimumSize(new java.awt.Dimension(1192, 670));
         setName("Organiza Figuras"); // NOI18N
